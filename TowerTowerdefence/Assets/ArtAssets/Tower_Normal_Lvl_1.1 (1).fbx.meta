@@ -1,0 +1,123 @@
+fileFormatVersion: 2
+guid: e2846f005504dea4b8d1590b60d681ff
+timeCreated: 1461070982
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Base_Tower
+    100002: Graden_60
+    100004: Stone_Base
+    100006: Stone_Base_1
+    100008: //RootNode
+    100010: Turret_Base
+    100012: Turret_End
+    100014: Wheel_1
+    100016: Wheel_2
+    100018: Wood
+    100020: Wood_Gold
+    400000: Base_Tower
+    400002: Graden_60
+    400004: Stone_Base
+    400006: Stone_Base_1
+    400008: //RootNode
+    400010: Turret_Base
+    400012: Turret_End
+    400014: Wheel_1
+    400016: Wheel_2
+    400018: Wood
+    400020: Wood_Gold
+    2300000: Base_Tower
+    2300002: Graden_60
+    2300004: Stone_Base
+    2300006: Stone_Base_1
+    2300008: Turret_Base
+    2300010: Turret_End
+    2300012: Wheel_1
+    2300014: Wheel_2
+    2300016: Wood
+    2300018: Wood_Gold
+    3300000: Base_Tower
+    3300002: Graden_60
+    3300004: Stone_Base
+    3300006: Stone_Base_1
+    3300008: Turret_Base
+    3300010: Turret_End
+    3300012: Wheel_1
+    3300014: Wheel_2
+    3300016: Wood
+    3300018: Wood_Gold
+    4300000: Wood
+    4300002: Stone_Base
+    4300004: Base_Tower
+    4300006: Wheel_1
+    4300008: Wheel_2
+    4300010: Graden_60
+    4300012: Turret_End
+    4300014: Turret_Base
+    4300016: Wood_Gold
+    4300018: Stone_Base_1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
