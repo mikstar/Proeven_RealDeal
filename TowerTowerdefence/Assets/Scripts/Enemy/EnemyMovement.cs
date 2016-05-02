@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyMovement : EnemyBase {
+public class EnemyMovement : MonoBehaviour {
 
-    private GameObject path;
+    public float speed;
+    public float turnSpeed;
+
+    public GameObject path;
     private Transform targetWaypoint;
     private int waypointIndex;
 
-    void Awake() {
-        path = GameObject.Find("Path1");
+    public virtual void Start() {
+        //path = GameObject.Find("Path1");
     }
 
     void GetNextWaypoint() {
@@ -16,12 +19,11 @@ public class EnemyMovement : EnemyBase {
         waypointIndex++;
     }
 
-    void ReachedGoal()
-    {
-        Destroy(gameObject);
+    void ReachedGoal(){
+        Destroy(this.gameObject);
     }
 
-    void Update() {
+    public void Move() {
         if (targetWaypoint == null) { 
             GetNextWaypoint();
             if (targetWaypoint == null) {
@@ -30,10 +32,9 @@ public class EnemyMovement : EnemyBase {
         }
 
         Vector3 dir = targetWaypoint.position - gameObject.transform.position;
-        float distThisFrame = moveSpeed * Time.deltaTime;
+        float distThisFrame = speed * Time.deltaTime;
 
-        if(dir.magnitude <= distThisFrame)
-        {
+        if(dir.magnitude <= distThisFrame){
             targetWaypoint = null;
         }
 
