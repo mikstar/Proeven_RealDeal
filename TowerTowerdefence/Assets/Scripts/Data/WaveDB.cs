@@ -16,8 +16,8 @@ public class WaveDB : MonoBehaviour {
     [System.Serializable]
     public class EnemyData{
         public enum EnemyTypes{
-            Mushroom,
-            Goblin,
+            Shroom1,
+            Shroom2,
             Herbo
         };
         public enum EnemyPath{
