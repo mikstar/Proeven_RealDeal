@@ -6,6 +6,7 @@ public class SpawnManager : MonoBehaviour {
     public Transform spawnPosition;
     public GameObject[] paths;
     public GameObject myPath;
+    public ResourceManager rM;
 
     private GameObject enemy;
 
@@ -32,6 +33,7 @@ public class SpawnManager : MonoBehaviour {
         eb.health = health;
         eb.speed = speed;
         eb.sManager = this;
+        eb.rManager = rM;
         eb.path = myPath;
         
     }

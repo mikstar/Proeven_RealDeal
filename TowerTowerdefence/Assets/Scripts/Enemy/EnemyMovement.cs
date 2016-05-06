@@ -6,9 +6,12 @@ public class EnemyMovement : MonoBehaviour {
     public float speed;
     public float turnSpeed;
 
+    public ResourceManager rManager;
+
     public GameObject path;
     private Transform targetWaypoint;
     private int waypointIndex;
+    private bool pathDone = false;
 
     public virtual void Start() {
         
@@ -17,8 +20,7 @@ public class EnemyMovement : MonoBehaviour {
     public void Move(){
         if (targetWaypoint == null){
             GetNextWaypoint();
-            if (targetWaypoint == null)
-            {
+            if (targetWaypoint == null && !pathDone){
                 ReachedGoal();
                 return;
             }
@@ -50,6 +52,12 @@ public class EnemyMovement : MonoBehaviour {
     void ReachedGoal(){
         Destroy(gameObject);
 
-        PlayerDB.Instance.health--;
+        rManager.BaseTakeDMG();
+        pathDone = true;
+        
+        //if (PlayerDB.Instance.health-- <= 1)
+       // {
+           // Debug.Log("lollipop");
+        //}
     }
 }
