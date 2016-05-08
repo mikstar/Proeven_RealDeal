@@ -11,7 +11,5 @@ public class HealthScript : MonoBehaviour {
 
     void FixedUpdate() {
         healthGUI.fillAmount = baseHealth.health / baseHealth.startHealth;
-
-        Debug.Log(baseHealth.health);
     }
 }
