@@ -9,7 +9,7 @@ public class TowerBase : MonoBehaviour {
     public float range;
 
     public SphereCollider rangeColl;
-    public SphereCollider baseColl;
+    public BoxCollider baseColl;
 
     //private GameObject[] targets;
     public List<GameObject> targets = new List<GameObject>();
