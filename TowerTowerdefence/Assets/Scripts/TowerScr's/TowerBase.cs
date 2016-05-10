@@ -8,6 +8,9 @@ public class TowerBase : MonoBehaviour {
     public float firerate;//shots per minute
     public float range;
 
+    public SphereCollider rangeColl;
+    public SphereCollider baseColl;
+
     //private GameObject[] targets;
     public List<GameObject> targets = new List<GameObject>();
     private float timeToFire;
@@ -15,7 +18,13 @@ public class TowerBase : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         timeToFire = 60 / firerate;
-        gameObject.GetComponent<SphereCollider>().radius = range;
+        rangeColl.radius = range;
+    }
+
+    public void turnTowerOn()
+    {
+        rangeColl.enabled = true;
+        baseColl.enabled = true;
     }
 	
     void OnTriggerEnter(Collider col)
