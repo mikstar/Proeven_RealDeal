@@ -23,7 +23,7 @@ public class SpawnManager : MonoBehaviour {
                 myPath = paths[1];
                 break;
             case 2:
-                myPath = paths[3];
+                myPath = paths[2];
                 break;
         }
 

@@ -4,7 +4,6 @@ using System.Collections;
 
 public class ResourceManager : MonoBehaviour {
 
-
     public Image healthGUI;
     public PlayerDB playerDB;
 
