@@ -40,7 +40,7 @@ public class TowerPlacer : MonoBehaviour {
                 for (int i =0;i<4;i++)
                 {
                     RaycastHit hit2;
-                    if (Physics.Raycast(checkPoints[i].position,-checkPoints[i].up, out hit2, 1.5f) && hit2.collider.tag == "PlacementWall")
+                    if (Physics.Raycast(checkPoints[i].position,-checkPoints[i].up, out hit2, 1.5f, 1 << 8))
                     {
 
                     }
@@ -48,7 +48,13 @@ public class TowerPlacer : MonoBehaviour {
                     {
                         i = 4;
                         placeble = false;
+                        Debug.Log("not placeble due lack of wall");
                     }
+                }
+                if (Physics.OverlapSphere(heldObj.transform.position, 0.8f, 1 << 9).Length > 0)
+                {
+                    placeble = false;
+                    Debug.Log("not placeble due to other tower");
                 }
 
                 if (Input.GetMouseButtonDown(0) && placeble)

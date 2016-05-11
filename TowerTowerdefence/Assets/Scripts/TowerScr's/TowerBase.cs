@@ -3,13 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class TowerBase : MonoBehaviour {
-    
+
+    public string towerType;
+    public int towerLvl;
+
     public float damage;
     public float firerate;//shots per minute
     public float range;
 
+    public int sellValue;
+    public int upgradeCost;
+
     public SphereCollider rangeColl;
-    public BoxCollider baseColl;
+    public SphereCollider baseColl;
 
     //private GameObject[] targets;
     public List<GameObject> targets = new List<GameObject>();
@@ -32,7 +38,6 @@ public class TowerBase : MonoBehaviour {
         if (col.gameObject.tag == "Enemy")
         {
             targets.Add(col.gameObject);
-            Debug.Log("TargetEnter");
         }
     }
     void OnTriggerExit(Collider col)
@@ -40,7 +45,6 @@ public class TowerBase : MonoBehaviour {
         if (col.gameObject.tag == "Enemy")
         {
             targets.Remove(col.gameObject);
-            Debug.Log("TargetExit");
         }
     }
     protected virtual void fireTurrent()
