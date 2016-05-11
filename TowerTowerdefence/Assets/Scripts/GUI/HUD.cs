@@ -6,20 +6,23 @@ public class HUD : MonoBehaviour {
 
     public Text resourceCount;
     public Text waveCount;
+    public Text startTimer;
 
     public Button nextWaveButton;
 
     public WaveManager waveManager;
+    public WaveDB waveDB;
 
     void Start() {
         waveManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveManager>();
-
+        waveDB = GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveDB>();
         nextWaveButton.onClick.AddListener(() => NextWaveButtonClicked());
     }
 
     void FixedUpdate() {
         //resourceCount.text =
         //waveCount.text =
+        startTimer.text = waveDB.waveTimer.ToString();
     }
 
     private void NextWaveButtonClicked() {

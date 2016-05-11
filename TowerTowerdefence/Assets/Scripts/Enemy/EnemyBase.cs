@@ -29,7 +29,7 @@ public class EnemyBase : EnemyMovement {
 
     public void DestroyEnemy() {
         // Destroys the enemy
-
+        Destroy(gameObject);
     }
 
     public void Slowed() {
