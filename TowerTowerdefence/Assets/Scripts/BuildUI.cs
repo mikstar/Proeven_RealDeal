@@ -12,7 +12,7 @@ public class BuildUI : MonoBehaviour {
 	
     public void giveTower(string name)
     {
-        placerSrc.holdNewObj(Instantiate(Resources.Load("Tower")) as GameObject);
+        placerSrc.holdNewObj(Instantiate(Resources.Load("Towers/" + name)) as GameObject);
     }
 
 	// Update is called once per frame

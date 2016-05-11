@@ -20,6 +20,7 @@ public class TowerPlacer : MonoBehaviour {
     public void holdNewObj(GameObject obj)
     {
         heldObj = obj;
+        gameObject.GetComponent<TowerUpgrader>().shutDown();
     }
 	
 	// Update is called once per frame
@@ -48,19 +49,19 @@ public class TowerPlacer : MonoBehaviour {
                     {
                         i = 4;
                         placeble = false;
-                        Debug.Log("not placeble due lack of wall");
                     }
                 }
                 if (Physics.OverlapSphere(heldObj.transform.position, 0.8f, 1 << 9).Length > 0)
                 {
                     placeble = false;
-                    Debug.Log("not placeble due to other tower");
                 }
 
                 if (Input.GetMouseButtonDown(0) && placeble)
                 {
+
                     heldObj.GetComponent<TowerBase>().turnTowerOn();
                     heldObj = null;
+                    gameObject.GetComponent<TowerUpgrader>().enabled = true;
                 }
             }
         }
