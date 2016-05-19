@@ -14,14 +14,16 @@ public class EnemyBase : EnemyMovement {
     public bool isDead;
     public SpawnManager sManager;
 
+    public Animator anim;
+
     public override void Start() {
         base.Start();
         maxHealth = health;
     }
 
     public void DamageEnemy(float dmg) {
+        //Inflict damage on the enemy
         health -= dmg;
-
         if (health <= 0) {
             DestroyEnemy();
         }
@@ -29,6 +31,8 @@ public class EnemyBase : EnemyMovement {
 
     public void DestroyEnemy() {
         // Destroys the enemy
+
+        
         Destroy(gameObject);
     }
 
@@ -41,7 +45,5 @@ public class EnemyBase : EnemyMovement {
         speed /= 2;
         yield return new WaitForSeconds(slowedTime);
         speed *= 2;
-    }
-
-    
+    } 
 }
