@@ -3,13 +3,14 @@ using System.Collections;
 
 public class EnemyMushroom : EnemyBase {
 
-	// Use this for initialization
-	public override void Start () {
-	
-	}
+    public AudioClip deathsound;
 
-    void FixedUpdate()
-    {
+	public override void Start () {
+        audioSource = GetComponent<AudioSource>();
+        deathAudio = deathsound;
+    }
+
+    void FixedUpdate(){
         Move();
     }
 }

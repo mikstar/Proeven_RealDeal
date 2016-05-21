@@ -21,11 +21,15 @@ public class EnemyBase : EnemyMovement {
     public bool isDead = false;             //bool to check if the enemy is dead
     public SpawnManager sManager;           
 
-    private Animator anim;          
+    private Animator anim;                  //Enemy animator controller
+
+    protected AudioSource audioSource;         //Audiosource on enemy
+    protected AudioClip deathAudio;            //Audioclip played on death   
 
     public override void Start() {
         base.Start();
         maxHealth = health;
+        
     }
 
     void LateUpdate() {
@@ -37,8 +41,6 @@ public class EnemyBase : EnemyMovement {
     }
 
     public void FadeOut() {
-        //TO DO: werk nog niet goed met shroom 1.2, color doet raar
-
         colorStart = GetComponentInChildren<Renderer>().material.color;
         colorEnd = new Color(colorStart.r, colorStart.g, colorStart.b, 0.0f);
 
@@ -64,6 +66,7 @@ public class EnemyBase : EnemyMovement {
         if (!isDead) {
             anim = GetComponentInChildren<Animator>();
             anim.SetBool("Dead", true);
+            audioSource.PlayOneShot(deathAudio);
             isDead = true;
             ableToMove = false;
         }
