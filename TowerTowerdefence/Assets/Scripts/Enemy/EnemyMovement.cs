@@ -20,13 +20,13 @@ public class EnemyMovement : MonoBehaviour {
         
     }
 
-    public void Move(){
+    public void Move(int endDMG){
         if (ableToMove) {
             if (targetWaypoint == null)
             {
-                GetNextWaypoint();
+                GetNextWaypoint(endDMG);
                 if (targetWaypoint == null && !pathDone){
-                    ReachedGoal();
+                    ReachedGoal(endDMG);
                     return;
                 }
             }
@@ -47,20 +47,20 @@ public class EnemyMovement : MonoBehaviour {
         }
     }
 
-    void GetNextWaypoint() {
+    void GetNextWaypoint(int dmg) {
         if(waypointIndex < path.transform.childCount) { 
             targetWaypoint = path.transform.GetChild(waypointIndex);
             waypointIndex++;
         }else{
             targetWaypoint = null;
-            ReachedGoal();
+            ReachedGoal(dmg);
         }
     }
 
-    void ReachedGoal(){
+    void ReachedGoal(int dmg){
         Destroy(gameObject);
 
-        rManager.BaseTakeDMG();
+        rManager.BaseTakeDMG(dmg);
         pathDone = true;
         
         //if (PlayerDB.Instance.health-- <= 1)

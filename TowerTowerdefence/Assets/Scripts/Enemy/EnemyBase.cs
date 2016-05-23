@@ -19,26 +19,25 @@ public class EnemyBase : EnemyMovement {
 
     public bool isSlowed;                   //bool to check if the enemy is slowed
     public bool isDead = false;             //bool to check if the enemy is dead
-    public SpawnManager sManager;           
+    public SpawnManager sManager;
 
-    private Animator anim;                  //Enemy animator controller
+    protected Animator anim;                  //Enemy animator controller
 
     protected AudioSource audioSource;         //Audiosource on enemy
     protected AudioClip deathAudio;            //Audioclip played on death   
 
     public override void Start() {
         base.Start();
-        maxHealth = health;
         
     }
 
-    void LateUpdate() {
-        if (isDead) {
-            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Death")) {
-               FadeOut();
-            }
-        }
-    }
+    //void LateUpdate() {
+        //if (isDead) {
+          //  if (anim.GetCurrentAnimatorStateInfo(0).IsName("Death")) {
+            //   FadeOut();
+           // }
+        //}
+    //}
 
     public void FadeOut() {
         colorStart = GetComponentInChildren<Renderer>().material.color;
@@ -61,18 +60,19 @@ public class EnemyBase : EnemyMovement {
         }
     }
 
-    public void KillEnemy() {
+    private void KillEnemy() {
         //Kills the enemy
         if (!isDead) {
             anim = GetComponentInChildren<Animator>();
             anim.SetBool("Dead", true);
             audioSource.PlayOneShot(deathAudio);
+            rManager.AddGold(goldReward);
             isDead = true;
             ableToMove = false;
         }
     }
-
-    public void DestroyEnemy() {
+  
+    private void DestroyEnemy() {
         //Destroy the enemy 
         Destroy(gameObject);
     }

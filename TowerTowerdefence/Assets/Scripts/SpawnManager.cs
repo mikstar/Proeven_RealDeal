@@ -31,7 +31,7 @@ public class SpawnManager : MonoBehaviour {
 
         EnemyBase eb = enemy.GetComponent<EnemyBase>();
         eb.health = health;
-        eb.speed = speed;
+        //eb.speed = speed;
         eb.sManager = this;
         eb.rManager = rM;
         eb.path = myPath;

@@ -11,20 +11,27 @@ public class HUD : MonoBehaviour {
 
     public Button nextWaveButton;
 
-    public WaveManager waveManager;
-    public WaveDB waveDB;
+    private WaveManager waveManager;
+    private WaveDB waveDB;
 
     void Start() {
-        waveManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveManager>();
-        waveDB = GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveDB>();
+        waveManager =   GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveManager>();
+        waveDB      =   GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveDB>();
         //nextWaveButton.onClick.AddListener(() => NextWaveButtonClicked());
     }
 
     void FixedUpdate() {
-        resourceCount.text = PlayerDB.Instance.gold.ToString();
-        healtCount.text = PlayerDB.Instance.health.ToString() + "/" + PlayerDB.Instance.startHealth.ToString();
-        //waveCount.text =
-        //startTimer.text = waveDB.waveTimer.ToString();
+        resourceCount.text  =   PlayerDB.Instance.gold.ToString();
+        healtCount.text     =   PlayerDB.Instance.health.ToString() + "/" + PlayerDB.Instance.startHealth.ToString();
+        waveCount.text      =   "Wave: " + waveDB.currentWave.ToString();
+
+        if (waveDB.isSpawning == true)
+        {
+            startTimer.text = "Wave in progress";
+        }
+        else {
+            startTimer.text = "Next wave in " + waveDB.waveTimer.ToString() + " seconds";
+        } 
     }
 
     private void NextWaveButtonClicked() {
