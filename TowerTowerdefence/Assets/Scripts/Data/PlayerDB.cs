@@ -18,7 +18,6 @@ public class PlayerDB : MonoBehaviour {
                 GameObject go = new GameObject("PlayerDB");
                 instance = go.AddComponent(typeof(PlayerDB)) as PlayerDB;
             }
-
             return instance;
         }
     }

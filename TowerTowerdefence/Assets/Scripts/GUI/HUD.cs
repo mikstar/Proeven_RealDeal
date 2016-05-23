@@ -7,6 +7,7 @@ public class HUD : MonoBehaviour {
     public Text resourceCount;
     public Text waveCount;
     public Text startTimer;
+    public Text healtCount;
 
     public Button nextWaveButton;
 
@@ -16,13 +17,14 @@ public class HUD : MonoBehaviour {
     void Start() {
         waveManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveManager>();
         waveDB = GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveDB>();
-        nextWaveButton.onClick.AddListener(() => NextWaveButtonClicked());
+        //nextWaveButton.onClick.AddListener(() => NextWaveButtonClicked());
     }
 
     void FixedUpdate() {
-        //resourceCount.text =
+        resourceCount.text = PlayerDB.Instance.gold.ToString();
+        healtCount.text = PlayerDB.Instance.health.ToString() + "/" + PlayerDB.Instance.startHealth.ToString();
         //waveCount.text =
-        startTimer.text = waveDB.waveTimer.ToString();
+        //startTimer.text = waveDB.waveTimer.ToString();
     }
 
     private void NextWaveButtonClicked() {

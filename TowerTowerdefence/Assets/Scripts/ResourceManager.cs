@@ -11,4 +11,8 @@ public class ResourceManager : MonoBehaviour {
         PlayerDB.Instance.health--;
         healthGUI.fillAmount = PlayerDB.Instance.health / PlayerDB.Instance.startHealth;
     }
+
+    public void BuildPayment(int cost) {
+        PlayerDB.Instance.gold -= cost;
+    }
 }
