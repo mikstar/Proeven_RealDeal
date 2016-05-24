@@ -19,7 +19,7 @@ public class TowerBase : MonoBehaviour {
 
     //private GameObject[] targets;
     public List<GameObject> targets = new List<GameObject>();
-    private float timeToFire;
+    protected float timeToFire;
 
 	// Use this for initialization
 	void Start () {

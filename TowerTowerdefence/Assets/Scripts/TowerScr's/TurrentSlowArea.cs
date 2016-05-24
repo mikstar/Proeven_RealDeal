@@ -10,14 +10,22 @@ public class TurrentSlowArea : TowerBase{
     {
         for (int i=0;i< targets.Count; i++)
         {
-            if (targets[i].GetComponent<Debuff_Slow>() != null)
+            if (targets[i].GetComponent<EnemyBase>().isDead == false)
             {
-                targets[i].GetComponent<Debuff_Slow>().setStatsAndReset(effectDuration);
+                if (targets[i].GetComponent<Debuff_Slow>() != null)
+                {
+                    targets[i].GetComponent<Debuff_Slow>().setStatsAndReset(effectDuration);
+                }
+                else
+                {
+                    Debuff_Slow newBuff = targets[i].AddComponent<Debuff_Slow>() as Debuff_Slow;
+                    newBuff.setStatsAndStart(speedChange, effectDuration);
+                }
             }
             else
             {
-                Debuff_Slow newBuff = targets[i].AddComponent<Debuff_Slow>() as Debuff_Slow;
-                newBuff.setStatsAndStart(speedChange, effectDuration);
+                targets.RemoveAt(i);
+                i--;
             }
         }
     }

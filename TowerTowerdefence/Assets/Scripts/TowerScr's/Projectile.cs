@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour {
     private Transform target;
     private float speed;
     private float damage;
+    private TowerBase sourceTower;
 
     public void setStats(Transform tar,float spd,float dmg)
     {
