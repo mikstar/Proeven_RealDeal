@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/devScene_Coen.unity
+- path: Assets/Scenes/Ice_Environment_Night.unity
   isLoaded: 1
   isActive: 1

@@ -1,0 +1,170 @@
+fileFormatVersion: 2
+guid: 16a0ac0cea18a4b64911d09f4127e0c4
+timeCreated: 1464076014
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Base_Ground
+    100002: Base_Underground
+    100004: COCK_wheel001
+    100006: COCK_wheel002
+    100008: COCK_wheel006
+    100010: COCK_wheel007
+    100012: COCK_wheel008
+    100014: COCK_wheel009
+    100016: COCK_wheel010
+    100018: COCK_wheel011
+    100020: COCK_wheel3
+    100022: COCK_wheel4
+    100024: COCK_wheel5
+    100026: COCK_wheel6
+    100028: COCK_wheel7
+    100030: Cock_Wheels
+    100032: //RootNode
+    100034: Stone_Base
+    100036: Trees
+    100038: Underground1
+    100040: wolkjes
+    400000: Base_Ground
+    400002: Base_Underground
+    400004: COCK_wheel001
+    400006: COCK_wheel002
+    400008: COCK_wheel006
+    400010: COCK_wheel007
+    400012: COCK_wheel008
+    400014: COCK_wheel009
+    400016: COCK_wheel010
+    400018: COCK_wheel011
+    400020: COCK_wheel3
+    400022: COCK_wheel4
+    400024: COCK_wheel5
+    400026: COCK_wheel6
+    400028: COCK_wheel7
+    400030: Cock_Wheels
+    400032: //RootNode
+    400034: Stone_Base
+    400036: Trees
+    400038: Underground1
+    400040: wolkjes
+    2300000: Base_Ground
+    2300002: Base_Underground
+    2300004: COCK_wheel001
+    2300006: COCK_wheel002
+    2300008: COCK_wheel006
+    2300010: COCK_wheel007
+    2300012: COCK_wheel008
+    2300014: COCK_wheel009
+    2300016: COCK_wheel010
+    2300018: COCK_wheel011
+    2300020: COCK_wheel3
+    2300022: COCK_wheel4
+    2300024: COCK_wheel5
+    2300026: COCK_wheel6
+    2300028: COCK_wheel7
+    2300030: Stone_Base
+    2300032: Trees
+    2300034: Underground1
+    2300036: wolkjes
+    3300000: Base_Ground
+    3300002: Base_Underground
+    3300004: COCK_wheel001
+    3300006: COCK_wheel002
+    3300008: COCK_wheel006
+    3300010: COCK_wheel007
+    3300012: COCK_wheel008
+    3300014: COCK_wheel009
+    3300016: COCK_wheel010
+    3300018: COCK_wheel011
+    3300020: COCK_wheel3
+    3300022: COCK_wheel4
+    3300024: COCK_wheel5
+    3300026: COCK_wheel6
+    3300028: COCK_wheel7
+    3300030: Stone_Base
+    3300032: Trees
+    3300034: Underground1
+    3300036: wolkjes
+    4300000: Base_Ground
+    4300002: Stone_Base
+    4300004: Base_Underground
+    4300006: wolkjes
+    4300008: Trees
+    4300010: COCK_wheel001
+    4300012: COCK_wheel002
+    4300014: COCK_wheel006
+    4300016: COCK_wheel007
+    4300018: COCK_wheel008
+    4300020: COCK_wheel009
+    4300022: COCK_wheel010
+    4300024: COCK_wheel011
+    4300026: COCK_wheel3
+    4300028: COCK_wheel4
+    4300030: COCK_wheel5
+    4300032: COCK_wheel6
+    4300034: COCK_wheel7
+    4300036: Underground1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
