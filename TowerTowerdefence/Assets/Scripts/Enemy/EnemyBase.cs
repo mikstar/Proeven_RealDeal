@@ -63,12 +63,12 @@ public class EnemyBase : EnemyMovement {
     private void KillEnemy() {
         //Kills the enemy
         if (!isDead) {
+            ableToMove = false;
             anim = GetComponentInChildren<Animator>();
             anim.SetBool("Dead", true);
             audioSource.PlayOneShot(deathAudio);
             rManager.AddGold(goldReward);
             isDead = true;
-            ableToMove = false;
         }
     }
   
