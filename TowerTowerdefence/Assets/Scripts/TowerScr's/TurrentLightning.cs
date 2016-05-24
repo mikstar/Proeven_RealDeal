@@ -13,7 +13,15 @@ public class TurrentLightning : TowerBase{
     {
         for (int i=0;i>targets.Count; i++)
         {
-            targets[i].GetComponent<EnemyBase>().DamageEnemy(damage);
+            if (targets[i].GetComponent<EnemyBase>().isDead == false)
+            {
+                targets[i].GetComponent<EnemyBase>().DamageEnemy(damage);
+            }
+            else
+            {
+                targets.RemoveAt(i);
+                i--;
+            }
         }
     }
 }

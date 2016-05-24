@@ -24,8 +24,15 @@ public class TwoAxisTurrent : MonoBehaviour {
     {
         if (towerSrc.targets.Count != 0)
         {
-            cannon.LookAt(towerSrc.targets[0].transform, platform.up);
-            platform.localEulerAngles = new Vector3(platform.localEulerAngles.x, cannon.localEulerAngles.y, platform.localEulerAngles.z);
+            if(towerSrc.targets[0].GetComponent<EnemyBase>().isDead == false)
+            {
+                cannon.LookAt(towerSrc.targets[0].transform, platform.up);
+                platform.localEulerAngles = new Vector3(platform.localEulerAngles.x, cannon.localEulerAngles.y, platform.localEulerAngles.z);
+            }
+            else
+            {
+                //remove from list
+            }
         }
     }
 }

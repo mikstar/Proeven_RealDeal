@@ -16,6 +16,17 @@ public class TurrentProjectile : TowerBase {
 
     protected override void fireTurrent()
     {
+        
+        while(targets[0].GetComponent<EnemyBase>().isDead)
+        {
+            targets.RemoveAt(0);
+            if (targets.Count == 0)
+            {
+                timeToFire = 0;
+                return;
+            }
+        }
+        
         //Check if a bullet is avalible
         int AvalibleBulletIndx = -1;
         for (int i=0;i< bullets.Count; i++)
@@ -32,7 +43,7 @@ public class TurrentProjectile : TowerBase {
             //use avalible bullet
             bullets[AvalibleBulletIndx].transform.position = firepoint.position;
             bullets[AvalibleBulletIndx].transform.rotation = firepoint.rotation;
-            bullets[AvalibleBulletIndx].GetComponent<Projectile>().setStats(targets[targets.Count-1].transform, bulletSpeed, damage);
+            bullets[AvalibleBulletIndx].GetComponent<Projectile>().setStats(targets[0].transform, bulletSpeed, damage);
             bullets[AvalibleBulletIndx].SetActive(true);
 
 
@@ -42,7 +53,7 @@ public class TurrentProjectile : TowerBase {
             //make new bullet
             GameObject newBull =  Instantiate(bulletPrefab, firepoint.position, Quaternion.identity) as GameObject;
             newBull.transform.rotation = firepoint.rotation;
-            newBull.GetComponent<Projectile>().setStats(targets[targets.Count - 1].transform, bulletSpeed, damage);
+            newBull.GetComponent<Projectile>().setStats(targets[0].transform, bulletSpeed, damage);
             bullets.Add(newBull);
         }
     }
