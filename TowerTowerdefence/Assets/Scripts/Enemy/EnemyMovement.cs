@@ -21,12 +21,14 @@ public class EnemyMovement : MonoBehaviour {
     }
 
     public void Move(int endDMG){
+        int dmg = endDMG;
+
         if (ableToMove) {
             if (targetWaypoint == null)
             {
-                GetNextWaypoint(endDMG);
+                GetNextWaypoint(dmg);
                 if (targetWaypoint == null && !pathDone){
-                    ReachedGoal(endDMG);
+                    ReachedGoal(dmg);
                     return;
                 }
             }
@@ -42,8 +44,8 @@ public class EnemyMovement : MonoBehaviour {
             Quaternion targetRotation = Quaternion.LookRotation(dir);
             this.transform.rotation = Quaternion.Lerp(this.transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
         }
-        else { 
-            
+        else {
+            Debug.Log("DONE");
         }
     }
 
