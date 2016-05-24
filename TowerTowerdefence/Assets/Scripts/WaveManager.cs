@@ -6,8 +6,7 @@ public class WaveManager : MonoBehaviour {
     public int startDelay;
     public int waveDelay;
 
-    public WaveDB waveDB;
-
+    private WaveDB waveDB;
     private SpawnManager spawnManager;
     private bool wavePause;
 

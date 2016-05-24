@@ -2,10 +2,9 @@
 using System.Collections;
 
 public class WaveDB : MonoBehaviour {
-
-    public int currentWave = 0;
-    public int waveTimer = 0;
-    public bool isSpawning = false;
+    [HideInInspector] public int currentWave = 0;
+    [HideInInspector] public int waveTimer = 0;
+    [HideInInspector] public bool isSpawning = false;
 
     [System.Serializable]
     public class Row{
@@ -30,15 +29,9 @@ public class WaveDB : MonoBehaviour {
             Meduim, 
             Large
         };
-        public enum EnemySpeed{
-            Slow,
-            Normal,
-            Fast
-        };
 
         public EnemyTypes   name;
         public EnemyPath    path;
-        public EnemySpeed   testspeed;
         public EnemySize    size;
         public float        speed;
         public float        health; 
