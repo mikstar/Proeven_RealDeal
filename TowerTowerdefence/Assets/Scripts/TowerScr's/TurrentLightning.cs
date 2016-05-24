@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TurrentArea : TowerBase{
+public class TurrentLightning : TowerBase{
 
     //public float damage;
     //public float firerate;//shots per minute
@@ -13,7 +13,7 @@ public class TurrentArea : TowerBase{
     {
         for (int i=0;i>targets.Count; i++)
         {
-
+            targets[i].GetComponent<EnemyBase>().DamageEnemy(damage);
         }
     }
 }

@@ -8,6 +8,8 @@ public class TowerPlacer : MonoBehaviour {
     private Transform checkObj;
     private Transform[] checkPoints = new Transform[4];
 
+    public Transform areaIndicator;
+
 	// Use this for initialization
 	void Start () {
         checkObj = (Instantiate(Resources.Load("PlacerObj")) as GameObject).transform;
@@ -21,6 +23,9 @@ public class TowerPlacer : MonoBehaviour {
     {
         heldObj = obj;
         gameObject.GetComponent<TowerUpgrader>().shutDown();
+        areaIndicator.gameObject.SetActive(true);
+        float tempInt = obj.GetComponent<TowerBase>().range * 2;
+        areaIndicator.localScale = new Vector3(tempInt, tempInt, tempInt);
     }
 	
 	// Update is called once per frame
@@ -32,6 +37,8 @@ public class TowerPlacer : MonoBehaviour {
             {
                 heldObj.transform.position = hit.point;
                 heldObj.transform.rotation = Quaternion.FromToRotation(heldObj.transform.up, hit.normal) * heldObj.transform.rotation;
+                areaIndicator.position = heldObj.transform.position;
+                //areaIndicator.position = heldObj.GetComponent<TowerBase>().rangeColl.transform.position;
 
                 checkObj.position = heldObj.transform.position;
                 checkObj.rotation = heldObj.transform.rotation;
@@ -62,6 +69,7 @@ public class TowerPlacer : MonoBehaviour {
                     heldObj.GetComponent<TowerBase>().turnTowerOn();
                     heldObj = null;
                     gameObject.GetComponent<TowerUpgrader>().enabled = true;
+                    areaIndicator.gameObject.SetActive(false);
                 }
             }
         }

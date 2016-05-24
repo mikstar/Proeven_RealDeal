@@ -13,20 +13,25 @@ public class Projectile : MonoBehaviour {
         speed = spd;
         damage = dmg;
     }
-	// Use this for initialization
-	void Start () {
-	
-	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Vector3.Distance(transform.position,target.position) < 0.5f)
+        if (target != null)
         {
-            target.gameObject.GetComponent<EnemyBase>().DamageEnemy(damage);
+            if (Vector3.Distance(transform.position,target.position) < 0.5f)
+            {
+                target.gameObject.GetComponent<EnemyBase>().DamageEnemy(damage);
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                transform.LookAt(target);
+                transform.position += transform.forward * speed;
+            }
+        }
+        else
+        {
             gameObject.SetActive(false);
         }
-
-        transform.LookAt(target);
-        transform.position += transform.forward * speed;
 	}
 }

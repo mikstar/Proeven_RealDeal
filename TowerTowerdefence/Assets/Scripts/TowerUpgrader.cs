@@ -11,8 +11,10 @@ public class TowerUpgrader : MonoBehaviour {
     public Text lvlTxt;
     public GameObject buildParticle;
 
-	// Use this for initialization
-	void Start () {
+    public Transform areaIndicator;
+
+    // Use this for initialization
+    void Start () {
 	
 	}
 
@@ -51,6 +53,12 @@ public class TowerUpgrader : MonoBehaviour {
 
         nameTxt.text = selectedTower.towerType;
         lvlTxt.text = selectedTower.towerLvl + "";
+
+        areaIndicator.position = newtower.transform.position;
+
+        float tempInt = newtower.range * 2;
+        areaIndicator.localScale = new Vector3(tempInt, tempInt, tempInt);
+        areaIndicator.gameObject.SetActive(true);
     }
 
     public void upgradeTower()
@@ -68,11 +76,15 @@ public class TowerUpgrader : MonoBehaviour {
             GameObject partemp = Instantiate(buildParticle) as GameObject;
             partemp.transform.position = selectedTower.transform.position;
             partemp.transform.LookAt(selectedTower.transform.position + selectedTower.transform.up);
+
+            
         }
     }
     public void sellTower()
     {
         UpgradeMenu.gameObject.SetActive(false);
         Destroy(selectedTower.gameObject);
+
+        areaIndicator.gameObject.SetActive(false);
     }
 }
