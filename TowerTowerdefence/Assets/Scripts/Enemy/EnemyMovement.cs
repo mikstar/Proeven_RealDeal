@@ -50,7 +50,7 @@ public class EnemyMovement : MonoBehaviour {
     }
 
     void GetNextWaypoint(int dmg) {
-        if(waypointIndex < path.transform.childCount) { 
+        if(waypointIndex < path.transform.childCount){ 
             targetWaypoint = path.transform.GetChild(waypointIndex);
             waypointIndex++;
         }else{

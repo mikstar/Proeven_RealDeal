@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class EnemyBase : EnemyMovement {
@@ -25,6 +26,8 @@ public class EnemyBase : EnemyMovement {
 
     protected AudioSource audioSource;         //Audiosource on enemy
     protected AudioClip deathAudio;            //Audioclip played on death   
+
+    public Image healthBar;
 
     public override void Start() {
         base.Start();
@@ -55,6 +58,9 @@ public class EnemyBase : EnemyMovement {
     public void DamageEnemy(float dmg) {
         //Inflict damage on enemy
         health -= dmg;
+
+        //healthBar = transform.FindChild("Fill").GetComponent<Image>();
+        //healthBar.fillAmount = health / maxHealth;
         if (health <= 0) {
             KillEnemy();
         }
