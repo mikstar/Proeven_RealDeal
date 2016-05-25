@@ -11,7 +11,7 @@ public class TurrentLightning : TowerBase{
 
     protected override void fireTurrent()
     {
-        for (int i=0;i>targets.Count; i++)
+        for (int i=0;i<targets.Count; i++)
         {
             if (targets[i].GetComponent<EnemyBase>().isDead == false)
             {

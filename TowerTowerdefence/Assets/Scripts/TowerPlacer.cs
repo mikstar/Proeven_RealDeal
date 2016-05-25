@@ -4,14 +4,19 @@ using System.Collections;
 public class TowerPlacer : MonoBehaviour {
 
     private GameObject heldObj;
+    private int heldObjPrice;
 
     private Transform checkObj;
     private Transform[] checkPoints = new Transform[4];
 
     public Transform areaIndicator;
 
+    public ResourceManager Rmaneger;
+
 	// Use this for initialization
 	void Start () {
+
+
         checkObj = (Instantiate(Resources.Load("PlacerObj")) as GameObject).transform;
         checkPoints[0] = checkObj.GetChild(0);
         checkPoints[1] = checkObj.GetChild(1);
@@ -19,8 +24,9 @@ public class TowerPlacer : MonoBehaviour {
         checkPoints[3] = checkObj.GetChild(3);
     }
     
-    public void holdNewObj(GameObject obj)
+    public void holdNewObj(GameObject obj, int price)
     {
+        heldObjPrice = price;
         heldObj = obj;
         gameObject.GetComponent<TowerUpgrader>().shutDown();
         areaIndicator.gameObject.SetActive(true);
@@ -48,11 +54,7 @@ public class TowerPlacer : MonoBehaviour {
                 for (int i =0;i<4;i++)
                 {
                     RaycastHit hit2;
-                    if (Physics.Raycast(checkPoints[i].position,-checkPoints[i].up, out hit2, 1.5f, 1 << 8))
-                    {
-
-                    }
-                    else
+                    if (!Physics.Raycast(checkPoints[i].position,-checkPoints[i].up, out hit2, 1.5f, 1 << 8))
                     {
                         i = 4;
                         placeble = false;
@@ -65,6 +67,7 @@ public class TowerPlacer : MonoBehaviour {
 
                 if (Input.GetMouseButtonDown(0) && placeble)
                 {
+                    Rmaneger.BuildPayment(heldObjPrice);
 
                     heldObj.GetComponent<TowerBase>().turnTowerOn();
                     heldObj = null;
