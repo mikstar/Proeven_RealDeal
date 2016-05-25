@@ -12,11 +12,13 @@ public class TowerUpgrader : MonoBehaviour {
     public GameObject buildParticle;
 
     public Transform areaIndicator;
+    private ResourceManager Rman;
 
     // Use this for initialization
     void Start () {
-	
-	}
+        Rman = gameObject.GetComponent<ResourceManager>();
+
+    }
 
     public void shutDown()
     {
@@ -65,17 +67,22 @@ public class TowerUpgrader : MonoBehaviour {
     {
         if(selectedTower.upgradeCost > 0)
         {
-            TowerBase temptower = Instantiate(Resources.Load("Towers/" + selectedTower.towerType + "_lv" + (selectedTower.towerLvl + 1)) as GameObject).GetComponent<TowerBase>();
-            Debug.Log("Towers/" + selectedTower.towerType + "_lv" + (selectedTower.towerLvl + 1));
-            //TowerBase temptower = Instantiate(Resources.Load("Towers/Basic_lv2") as GameObject).GetComponent<TowerBase>();
-            temptower.transform.position = selectedTower.transform.position;
-            temptower.transform.rotation = selectedTower.transform.rotation;
-            Destroy(selectedTower.gameObject);
-            temptower.turnTowerOn();
-            ActivateMenu(temptower);
-            GameObject partemp = Instantiate(buildParticle) as GameObject;
-            partemp.transform.position = selectedTower.transform.position;
-            partemp.transform.LookAt(selectedTower.transform.position + selectedTower.transform.up);
+            if (PlayerDB.Instance.gold >= selectedTower.upgradeCost)
+            {
+                Rman.BuildPayment(selectedTower.upgradeCost);
+
+                TowerBase temptower = Instantiate(Resources.Load("Towers/" + selectedTower.towerType + "_lv" + (selectedTower.towerLvl + 1)) as GameObject).GetComponent<TowerBase>();
+                Debug.Log("Towers/" + selectedTower.towerType + "_lv" + (selectedTower.towerLvl + 1));
+                //TowerBase temptower = Instantiate(Resources.Load("Towers/Basic_lv2") as GameObject).GetComponent<TowerBase>();
+                temptower.transform.position = selectedTower.transform.position;
+                temptower.transform.rotation = selectedTower.transform.rotation;
+                Destroy(selectedTower.gameObject);
+                temptower.turnTowerOn();
+                ActivateMenu(temptower);
+                GameObject partemp = Instantiate(buildParticle) as GameObject;
+                partemp.transform.position = selectedTower.transform.position;
+                partemp.transform.LookAt(selectedTower.transform.position + selectedTower.transform.up);
+            }
 
             
         }

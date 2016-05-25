@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Particles/Particles.unity
-=======
 - path: Assets/Scenes/devScene_Mike.unity
->>>>>>> origin/master
   isLoaded: 1
   isActive: 1
