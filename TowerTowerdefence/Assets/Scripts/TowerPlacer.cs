@@ -48,11 +48,7 @@ public class TowerPlacer : MonoBehaviour {
                 for (int i =0;i<4;i++)
                 {
                     RaycastHit hit2;
-                    if (Physics.Raycast(checkPoints[i].position,-checkPoints[i].up, out hit2, 1.5f, 1 << 8))
-                    {
-
-                    }
-                    else
+                    if (!Physics.Raycast(checkPoints[i].position,-checkPoints[i].up, out hit2, 1.5f, 1 << 8))
                     {
                         i = 4;
                         placeble = false;
