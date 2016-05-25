@@ -5,14 +5,14 @@ public class EnemyMushroom : EnemyBase {
 
     public AudioClip deathsound;
 
-    private int baseDMG;
+    public int baseDMG;
   
 
 	public override void Start () {
         audioSource = GetComponent<AudioSource>();
         deathAudio = deathsound;
 
-        baseDMG = 3;
+       
     }
 
     void FixedUpdate(){
