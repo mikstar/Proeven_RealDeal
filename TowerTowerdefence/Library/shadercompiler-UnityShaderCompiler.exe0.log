@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Base path: C:/Program Files/Unity/Editor/Data
+=======
+Base path: D:/Unity3D/Editor/Data
+>>>>>>> 1d4dfd35820801a06088bd1d62a859f52c6df9de
 Cmd: getPlatforms
 Cmd: preprocess
   insize=1909 outsize=621 ok=1
