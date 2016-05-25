@@ -45,7 +45,7 @@ public class EnemyMovement : MonoBehaviour {
             this.transform.rotation = Quaternion.Lerp(this.transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
         }
         else {
-            Debug.Log("DONE");
+            
         }
     }
 
