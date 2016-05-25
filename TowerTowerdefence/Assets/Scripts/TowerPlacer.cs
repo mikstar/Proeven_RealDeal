@@ -11,11 +11,11 @@ public class TowerPlacer : MonoBehaviour {
 
     public Transform areaIndicator;
 
-    public ResourceManager Rmaneger;
+    private ResourceManager Rmaneger;
 
 	// Use this for initialization
 	void Start () {
-
+        Rmaneger = gameObject.GetComponent<ResourceManager>();
 
         checkObj = (Instantiate(Resources.Load("PlacerObj")) as GameObject).transform;
         checkPoints[0] = checkObj.GetChild(0);
