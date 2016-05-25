@@ -13,7 +13,6 @@ public class ResourceManager : MonoBehaviour {
 
     public void BuildPayment(int cost)
     {
-        Debug.Log(cost);
         PlayerDB.Instance.gold -=cost;
     }
 
