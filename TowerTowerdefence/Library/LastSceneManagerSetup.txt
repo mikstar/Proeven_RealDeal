@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/devScene_Mike.unity
-=======
 - path: Assets/Scenes/ForestDay.unity
->>>>>>> 8b4b57c7a222e4b054659ab47bbc4554a292cfdb
   isLoaded: 1
   isActive: 1
