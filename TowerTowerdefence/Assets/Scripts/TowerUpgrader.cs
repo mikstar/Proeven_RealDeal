@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class TowerUpgrader : MonoBehaviour {
 
@@ -43,7 +44,23 @@ public class TowerUpgrader : MonoBehaviour {
         }
         else
         {
-            UpgradeMenu.rectTransform.position = Camera.main.WorldToScreenPoint(selectedTower.transform.position) + new Vector3(140,0,0);
+            UpgradeMenu.rectTransform.position = Camera.main.WorldToScreenPoint(selectedTower.transform.position) + new Vector3(140, 0, 0);
+
+            RaycastHit hit;
+            if (Input.GetMouseButtonDown(0) && EventSystem.current.currentSelectedGameObject == null)
+            {
+                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 1000, 1 << 9 | 1 << 8) && hit.transform.tag == "Tower")
+                {
+                    ActivateMenu(hit.transform.parent.GetComponent<TowerBase>());
+                }
+                else
+                {
+                    UpgradeMenu.gameObject.SetActive(false);
+                    areaIndicator.gameObject.SetActive(false);
+                }
+            }
+
+            //Debug.Log(EventSystem.current.currentSelectedGameObject.name);
         }
     }
 

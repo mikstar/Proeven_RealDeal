@@ -7,10 +7,30 @@ public class Projectile : MonoBehaviour {
     private float speed;
     private float damage;
     private TowerBase sourceTower;
+
+    public GameObject bullModel;
+    public ParticleSystem trail;
+    public ParticleSystem explosion;
+
+    public bool isActive;
     
+    public void turnOn()
+    {
+        isActive = true;
+        bullModel.SetActive(true);
+        trail.Play();
+    }
+    public void turnOff()
+    {
+        isActive = false;
+        target = null;
+        bullModel.SetActive(false);
+        trail.Stop();
+    }
 
     public void setStats(Transform tar,float spd,float dmg)
     {
+        explosion.Stop();
         target = tar;
         speed = spd;
         damage = dmg;
@@ -23,7 +43,8 @@ public class Projectile : MonoBehaviour {
             if (Vector3.Distance(transform.position,target.position) < 0.5f)
             {
                 target.gameObject.GetComponent<EnemyBase>().DamageEnemy(damage);
-                gameObject.SetActive(false);
+                explosion.Play();
+                turnOff();
             }
             else
             {
@@ -31,9 +52,9 @@ public class Projectile : MonoBehaviour {
                 transform.position += transform.forward * speed;
             }
         }
-        else
+        else if(isActive)
         {
-            gameObject.SetActive(false);
+            turnOff();
         }
 	}
 }

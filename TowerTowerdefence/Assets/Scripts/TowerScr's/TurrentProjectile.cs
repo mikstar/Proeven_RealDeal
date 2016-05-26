@@ -12,7 +12,7 @@ public class TurrentProjectile : TowerBase {
     public GameObject bulletPrefab;
 
     //private GameObject[] targets;
-    private List<GameObject> bullets = new List<GameObject>();
+    private List<Projectile> bullets = new List<Projectile>();
 
     protected override void fireTurrent()
     {
@@ -31,7 +31,7 @@ public class TurrentProjectile : TowerBase {
         int AvalibleBulletIndx = -1;
         for (int i=0;i< bullets.Count; i++)
         {
-            if (bullets[i].activeSelf == false)
+            if (bullets[i].isActive == false)
             {
                 AvalibleBulletIndx = i;
                 i = bullets.Count;
@@ -44,7 +44,7 @@ public class TurrentProjectile : TowerBase {
             bullets[AvalibleBulletIndx].transform.position = firepoint.position;
             bullets[AvalibleBulletIndx].transform.rotation = firepoint.rotation;
             bullets[AvalibleBulletIndx].GetComponent<Projectile>().setStats(targets[0].transform, bulletSpeed, damage);
-            bullets[AvalibleBulletIndx].SetActive(true);
+            bullets[AvalibleBulletIndx].turnOn();
 
 
         }
@@ -54,7 +54,7 @@ public class TurrentProjectile : TowerBase {
             GameObject newBull =  Instantiate(bulletPrefab, firepoint.position, Quaternion.identity) as GameObject;
             newBull.transform.rotation = firepoint.rotation;
             newBull.GetComponent<Projectile>().setStats(targets[0].transform, bulletSpeed, damage);
-            bullets.Add(newBull);
+            bullets.Add(newBull.GetComponent<Projectile>());
         }
     }
 }
