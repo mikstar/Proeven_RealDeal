@@ -39,4 +39,13 @@ public class HUD : MonoBehaviour {
     private void NextWaveButtonClicked() {
         waveManager.NextWaveButtonClicked();
     }
+
+    //TEMP CODE BELOW
+    public void RestartLevel() {
+        Application.LoadLevel("ForestDay");
+    }
+
+    public void BackToMenu() {
+        Application.LoadLevel("MenuScene");
+    }
 }

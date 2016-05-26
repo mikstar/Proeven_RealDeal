@@ -31,6 +31,7 @@ public class EnemyBase : EnemyMovement {
 
     public override void Start() {
         base.Start();
+
         
     }
 
@@ -59,8 +60,10 @@ public class EnemyBase : EnemyMovement {
         //Inflict damage on enemy
         health -= dmg;
 
-        //healthBar = transform.FindChild("Fill").GetComponent<Image>();
-        //healthBar.fillAmount = health / maxHealth;
+        //TO DO: clean up, move to mush/herbo
+        healthBar = transform.FindChild("EnemyCanvas").FindChild("Fill").GetComponent<Image>();
+
+        healthBar.fillAmount = health / maxHealth;
         if (health <= 0) {
             KillEnemy();
         }

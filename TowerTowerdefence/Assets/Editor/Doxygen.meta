@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:TowerTowerdefence/Assets/Editor/Doxygen.meta
 guid: 7f66f7535d190c2428872093d3a1e0c4
 folderAsset: yes
 timeCreated: 1464211478
+=======
+guid: 6839a27ec6bd8524b9deb4ef8c4c9f4d
+folderAsset: yes
+timeCreated: 1464249270
+>>>>>>> 8b4b57c7a222e4b054659ab47bbc4554a292cfdb:TowerTowerdefence/Assets/Scenes/devScene_Coen.meta
 licenseType: Free
 DefaultImporter:
   userData: 

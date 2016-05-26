@@ -3,6 +3,8 @@ using System.Collections;
 
 public class SpawnManager : MonoBehaviour {
 
+
+    //TO DO: clean up
     public Transform spawnPosition;
     public GameObject[] paths;
     public GameObject myPath;
@@ -30,7 +32,7 @@ public class SpawnManager : MonoBehaviour {
         enemy = Instantiate(Resources.Load("Prefabs/Enemies/" + name), spawnPosition.position, Quaternion.identity) as GameObject;
 
         EnemyBase eb = enemy.GetComponent<EnemyBase>();
-        eb.health = health;
+        //eb.health = health;
         //eb.speed = speed;
         eb.sManager = this;
         eb.rManager = rM;

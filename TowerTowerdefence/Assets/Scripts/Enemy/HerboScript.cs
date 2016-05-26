@@ -5,13 +5,12 @@ public class HerboScript : EnemyBase{
 
     public AudioClip deathsound;
 
-    private int baseDMG;
+    public int baseDMG;
 
     public override void Start(){
         audioSource = GetComponent<AudioSource>();
         deathAudio = deathsound;
 
-        baseDMG = 2;
     }
 
     void FixedUpdate(){
