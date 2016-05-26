@@ -13,11 +13,18 @@ public class WaveManager : MonoBehaviour {
     private int currentEnemy;
     private int enemiesSpawning;
 
+    public AudioManager audioManager;
+    private AudioSource asource;
+
     void Start() {
         waveDB          =   GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveDB>();
         spawnManager    =   GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<SpawnManager>();
+        audioManager    =   GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
 
         StartCoroutine("SpawnTimer");
+
+        
+        
     }
 
     void Update() {
@@ -33,6 +40,8 @@ public class WaveManager : MonoBehaviour {
     }
 
     void StartNewWave() {
+        audioManager.PlayNewWave();
+
         currentEnemy = 0;
         waveDB.currentWave++;
 

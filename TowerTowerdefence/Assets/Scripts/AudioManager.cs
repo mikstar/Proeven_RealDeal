@@ -13,5 +13,29 @@ public class AudioManager : MonoBehaviour {
     public AudioClip towerUpgradedSound;
     public AudioClip towerSoldSound;
 
-    
+    private AudioSource aSource;
+
+    void Start() {
+        aSource = GetComponent<AudioSource>();
+    }
+
+    public void PlayNewWave() {
+        aSource.PlayOneShot(newWaveSound);
+    }
+
+    public void PlayWaveCleared() {
+        aSource.PlayOneShot(waveClearedSound);
+    }
+
+    public void PlayTowerConstructed() {
+        aSource.PlayOneShot(towerConstructingSound);
+    }
+
+    public void PlayTowerSold() {
+        aSource.PlayOneShot(towerSoldSound);
+    }
+
+    public void PlayTowerUpgrade() {
+        aSource.PlayOneShot(towerConstructedSound);
+    }
 }
