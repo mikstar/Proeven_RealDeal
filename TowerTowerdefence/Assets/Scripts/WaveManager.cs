@@ -13,7 +13,7 @@ public class WaveManager : MonoBehaviour {
     private int currentEnemy;
     private int enemiesSpawning;
 
-    public AudioManager audioManager;
+    private AudioManager audioManager;
     private AudioSource asource;
 
     void Start() {

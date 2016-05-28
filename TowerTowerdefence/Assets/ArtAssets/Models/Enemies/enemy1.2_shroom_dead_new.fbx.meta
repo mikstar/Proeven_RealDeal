@@ -1,84 +1,52 @@
 fileFormatVersion: 2
-guid: 05283886c345c3949b329e7c87cd116b
-timeCreated: 1464342831
+guid: 87035a269c8d1fc4ead045b183b9248c
+timeCreated: 1464437248
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Base_Body
-    100002: //RootNode
-    100004: Eye_Left
-    100006: Eye_Right
-    100008: Shield
-    100010: Spike_1
-    100012: Spike_2
-    100014: Spike_3
-    100016: Spike_4
-    100018: Spike_5
-    100020: Spike_6
-    100022: Spike_7
-    100024: Spike_8
-    100026: Spike_9
-    100028: Sprieten
-    400000: Base_Body
-    400002: //RootNode
-    400004: Eye_Left
-    400006: Eye_Right
-    400008: Shield
-    400010: Spike_1
-    400012: Spike_2
-    400014: Spike_3
-    400016: Spike_4
-    400018: Spike_5
-    400020: Spike_6
-    400022: Spike_7
-    400024: Spike_8
-    400026: Spike_9
-    400028: Sprieten
-    2300000: Base_Body
-    2300002: Eye_Left
-    2300004: Eye_Right
-    2300006: Shield
-    2300008: Spike_1
-    2300010: Spike_2
-    2300012: Spike_3
-    2300014: Spike_4
-    2300016: Spike_5
-    2300018: Spike_6
-    2300020: Spike_7
-    2300022: Spike_8
-    2300024: Spike_9
-    2300026: Sprieten
-    3300000: Base_Body
-    3300002: Eye_Left
-    3300004: Eye_Right
-    3300006: Shield
-    3300008: Spike_1
-    3300010: Spike_2
-    3300012: Spike_3
-    3300014: Spike_4
-    3300016: Spike_5
-    3300018: Spike_6
-    3300020: Spike_7
-    3300022: Spike_8
-    3300024: Spike_9
-    3300026: Sprieten
-    4300000: Base_Body
-    4300002: Shield
-    4300004: Spike_1
-    4300006: Spike_2
-    4300008: Spike_3
-    4300010: Spike_4
-    4300012: Spike_5
-    4300014: Spike_6
-    4300016: Spike_7
-    4300018: Spike_8
-    4300020: Spike_9
-    4300022: Sprieten
-    4300024: Eye_Right
-    4300026: Eye_Left
+    100000: arm_end_L
+    100002: arm_end_R
+    100004: arm_L
+    100006: arm_lower_L
+    100008: arm_lower_R
+    100010: arm_R
+    100012: //RootNode
+    100014: leg_end_L
+    100016: leg_end_R
+    100018: leg_L
+    100020: leg_lower_L
+    100022: leg_lower_R
+    100024: leg_R
+    100026: pCube12
+    100028: shroom_head
+    100030: shroom_point
+    100032: skeleton
+    100034: top_body
+    100036: top_body2
+    400000: arm_end_L
+    400002: arm_end_R
+    400004: arm_L
+    400006: arm_lower_L
+    400008: arm_lower_R
+    400010: arm_R
+    400012: //RootNode
+    400014: leg_end_L
+    400016: leg_end_R
+    400018: leg_L
+    400020: leg_lower_L
+    400022: leg_lower_R
+    400024: leg_R
+    400026: pCube12
+    400028: shroom_head
+    400030: shroom_point
+    400032: skeleton
+    400034: top_body
+    400036: top_body2
+    4300000: pCube12
     7400000: Take 001
     9500000: //RootNode
+    13700000: pCube12
   materials:
     importMaterials: 1
     materialName: 0
@@ -103,7 +71,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 15
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour {
     public AudioClip towerUpgradedSound;
     public AudioClip towerSoldSound;
 
+    public AudioClip baseDMG;
+
     private AudioSource aSource;
 
     void Start() {
