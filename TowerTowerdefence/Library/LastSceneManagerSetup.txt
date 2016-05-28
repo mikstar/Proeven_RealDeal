@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/ForestDay.unity
+=======
+- path: Assets/Scenes/Ice_Environment_Night.unity
+>>>>>>> origin/master
   isLoaded: 1
   isActive: 1
