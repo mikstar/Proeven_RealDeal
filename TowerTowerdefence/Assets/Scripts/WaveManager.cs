@@ -21,9 +21,6 @@ public class WaveManager : MonoBehaviour {
         spawnManager    =   GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<SpawnManager>();
         audioManager    =   GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
 
-        StartCoroutine("SpawnTimer");
-
-        
         
     }
 
@@ -33,10 +30,16 @@ public class WaveManager : MonoBehaviour {
             wavePause = true;
         }
     }
+
+    //TO DO: functies hier onder aanpassen/verplaatsen
     public void NextWaveButtonClicked() {
         if (!waveDB.isSpawning) {
-            Debug.Log("NEXT WAVE NOW");
+            waveDB.waveTimer = 0;
         }
+    }
+
+    public void StartGameButtonClicked() {
+        StartCoroutine("SpawnTimer");
     }
 
     void StartNewWave() {
