@@ -16,8 +16,7 @@ public class BossScript : EnemyBase{
 
     }
 
-    void FixedUpdate()
-    {
+    void FixedUpdate(){
         Move(baseDMG);
 
         if (isDead)

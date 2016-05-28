@@ -40,4 +40,8 @@ public class AudioManager : MonoBehaviour {
     public void PlayTowerUpgrade() {
         aSource.PlayOneShot(towerConstructedSound);
     }
+
+    public void PlayBaseDMG() {
+        aSource.PlayOneShot(baseDMG);
+    }
 }

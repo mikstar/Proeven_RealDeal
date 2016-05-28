@@ -9,12 +9,9 @@ public class SpawnManager : MonoBehaviour {
     public GameObject[] paths;
     public GameObject myPath;
     public ResourceManager rM;
+    public AudioManager aM;
 
     private GameObject enemy;
-
-	void Start () {
-	
-	}
 
     public void SpawnEnemy(string name, int path, string size, float speed, float health) {
         switch (path) {
@@ -32,10 +29,9 @@ public class SpawnManager : MonoBehaviour {
         enemy = Instantiate(Resources.Load("Prefabs/Enemies/" + name), spawnPosition.position, Quaternion.identity) as GameObject;
 
         EnemyBase eb = enemy.GetComponent<EnemyBase>();
-        //eb.health = health;
-        //eb.speed = speed;
         eb.sManager = this;
         eb.rManager = rM;
+        eb.aManager = aM;
         eb.path = myPath;
         
     }

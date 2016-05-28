@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour {
     public float turnSpeed;
 
     public ResourceManager rManager;
+    public AudioManager aManager;
 
     public GameObject path;
 
@@ -62,6 +63,8 @@ public class EnemyMovement : MonoBehaviour {
     }
 
     void ReachedGoal(int dmg){
+        aManager.PlayBaseDMG();
+
         rManager.BaseTakeDMG(dmg);
         pathDone = true;
         Destroy(gameObject);
