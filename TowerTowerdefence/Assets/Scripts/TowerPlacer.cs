@@ -55,7 +55,10 @@ public class TowerPlacer : MonoBehaviour {
             if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit,1000, 1 << 8))
             {
                 heldObj.transform.position = hit.point;
-                heldObj.transform.rotation = Quaternion.FromToRotation(heldObj.transform.up, hit.normal) * heldObj.transform.rotation;
+                heldObj.transform.rotation = Quaternion.LookRotation(hit.normal);
+                heldObj.transform.eulerAngles += new Vector3(90,0,0);
+
+                Debug.Log(hit.normal);
                 areaIndicator.position = heldObj.transform.position;
 
                 checkObj.position = heldObj.transform.position;
