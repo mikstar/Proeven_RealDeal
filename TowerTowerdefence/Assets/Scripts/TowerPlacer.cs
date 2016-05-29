@@ -13,8 +13,15 @@ public class TowerPlacer : MonoBehaviour {
 
     private ResourceManager Rmaneger;
 
-	// Use this for initialization
-	void Start () {
+    private bool placebleRemember = true;
+
+    public Material unplacebleMat;
+    public Material placebleMat;
+
+    private Material originalMat;
+
+    // Use this for initialization
+    void Start () {
         Rmaneger = gameObject.GetComponent<ResourceManager>();
 
         checkObj = (Instantiate(Resources.Load("PlacerObj")) as GameObject).transform;
@@ -32,6 +39,12 @@ public class TowerPlacer : MonoBehaviour {
         areaIndicator.gameObject.SetActive(true);
         float tempInt = obj.GetComponent<TowerBase>().range * 2;
         areaIndicator.localScale = new Vector3(tempInt, tempInt, tempInt);
+
+        originalMat = obj.GetComponentInChildren<MeshRenderer>().material;
+        foreach (MeshRenderer mes in obj.GetComponentsInChildren<MeshRenderer>())
+        {
+            mes.material = placebleMat;
+        }
     }
 	
 	// Update is called once per frame
@@ -44,7 +57,6 @@ public class TowerPlacer : MonoBehaviour {
                 heldObj.transform.position = hit.point;
                 heldObj.transform.rotation = Quaternion.FromToRotation(heldObj.transform.up, hit.normal) * heldObj.transform.rotation;
                 areaIndicator.position = heldObj.transform.position;
-                //areaIndicator.position = heldObj.GetComponent<TowerBase>().rangeColl.transform.position;
 
                 checkObj.position = heldObj.transform.position;
                 checkObj.rotation = heldObj.transform.rotation;
@@ -65,13 +77,51 @@ public class TowerPlacer : MonoBehaviour {
                     placeble = false;
                 }
 
-                if (Input.GetMouseButtonDown(0) && placeble)
+                if (placeble)
                 {
-                    Rmaneger.BuildPayment(heldObjPrice);
+                    //if tower is in a placeble position
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        //change material back to original
+                        foreach (MeshRenderer mes in heldObj.GetComponentsInChildren<MeshRenderer>())
+                        {
+                            mes.material = originalMat;
+                        }
 
-                    heldObj.GetComponent<TowerBase>().turnTowerOn();
-                    heldObj = null;
-                    gameObject.GetComponent<TowerUpgrader>().enabled = true;
+                        //deduct gold
+                        Rmaneger.BuildPayment(heldObjPrice);
+
+                        heldObj.GetComponent<TowerBase>().turnTowerOn(); // activate tower
+                        heldObj = null;
+                        gameObject.GetComponent<TowerUpgrader>().enabled = true;
+                        areaIndicator.gameObject.SetActive(false);
+
+
+                    }
+                    else if(!placebleRemember)
+                    {
+                        areaIndicator.gameObject.SetActive(true);
+                        foreach (MeshRenderer mes in heldObj.GetComponentsInChildren<MeshRenderer>())
+                        {
+                            mes.material = placebleMat;
+                        }
+                    }
+                }
+                else if(placebleRemember)
+                {
+                    //set to implaceble material
+                    foreach (MeshRenderer mes in heldObj.GetComponentsInChildren<MeshRenderer>())
+                    {
+                        mes.material = unplacebleMat;
+                    }
+
+                    areaIndicator.gameObject.SetActive(false);
+                }
+                placebleRemember = placeble;
+
+                if (Input.GetMouseButtonDown(1))
+                {
+                    Destroy(heldObj.gameObject);
                     areaIndicator.gameObject.SetActive(false);
                 }
             }

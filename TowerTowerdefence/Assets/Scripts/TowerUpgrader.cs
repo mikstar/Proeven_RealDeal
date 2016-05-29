@@ -15,6 +15,9 @@ public class TowerUpgrader : MonoBehaviour {
     public Transform areaIndicator;
     private ResourceManager Rman;
 
+    public TooltipAssighn Upgradetrigger;
+    public TooltipAssighn selltrigger;
+
     // Use this for initialization
     void Start () {
         Rman = gameObject.GetComponent<ResourceManager>();
@@ -78,7 +81,12 @@ public class TowerUpgrader : MonoBehaviour {
         float tempInt = newtower.range * 2;
         areaIndicator.localScale = new Vector3(tempInt, tempInt, tempInt);
         areaIndicator.gameObject.SetActive(true);
-    }
+
+
+
+        Upgradetrigger.tooltipText = "Cost: " + newtower.upgradeCost + "Gold";
+        selltrigger.tooltipText = "Sell for " + newtower.sellValue + "Gold";
+}
 
     public void upgradeTower()
     {
@@ -110,5 +118,7 @@ public class TowerUpgrader : MonoBehaviour {
         Destroy(selectedTower.gameObject);
 
         areaIndicator.gameObject.SetActive(false);
+
+        gameObject.GetComponent<TooltipControl>().turnOff();
     }
 }
