@@ -85,12 +85,16 @@ public class EnemyBase : EnemyMovement {
         //Destroy the enemy 
         Destroy(gameObject);
     }
-
+    
+    
+    // kan weg als mike het niet gebruikt?
     public void Slowed() {
         isSlowed = true;
         StartCoroutine("SlowedDelay");
     }
 
+
+    
     IEnumerator SlowedDelay() {
         speed /= 2;
         yield return new WaitForSeconds(slowedTime);

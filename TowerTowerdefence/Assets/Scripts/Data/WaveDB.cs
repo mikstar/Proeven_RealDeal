@@ -17,7 +17,9 @@ public class WaveDB : MonoBehaviour {
         public enum EnemyTypes{
             Shroom1,
             Shroom2,
-            Herbo
+            Herbo, 
+            Boss, 
+            Boss2
         };
         public enum EnemyPath{
             Green,

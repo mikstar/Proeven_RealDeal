@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour {
     public float turnSpeed;
 
     public ResourceManager rManager;
+    public AudioManager aManager;
 
     public GameObject path;
 
@@ -16,36 +17,38 @@ public class EnemyMovement : MonoBehaviour {
 
     public bool ableToMove = true;
 
+    private int dmgz;
+
     public virtual void Start() {
         
     }
 
     public void Move(int endDMG){
-        int dmg = endDMG;
+        dmgz = endDMG;
 
         if (ableToMove) {
             if (targetWaypoint == null)
             {
-                GetNextWaypoint(dmg);
-                if (targetWaypoint == null && !pathDone){
-                    ReachedGoal(dmg);
+                GetNextWaypoint(dmgz);
+                if (targetWaypoint == null && !pathDone)
+                {
+                    ReachedGoal(dmgz);
                     return;
                 }
             }
+            else {
+                Vector3 dir = targetWaypoint.position - gameObject.transform.position;
+                float distThisFrame = speed * Time.deltaTime;
 
-            Vector3 dir = targetWaypoint.position - gameObject.transform.position;
-            float distThisFrame = speed * Time.deltaTime;
+                if (dir.magnitude <= distThisFrame)
+                {
+                    targetWaypoint = null;
+                }
 
-            if (dir.magnitude <= distThisFrame){
-                targetWaypoint = null;
-            }
-
-            transform.Translate(dir.normalized * distThisFrame, Space.World);
-            Quaternion targetRotation = Quaternion.LookRotation(dir);
-            this.transform.rotation = Quaternion.Lerp(this.transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
-        }
-        else {
-            
+                transform.Translate(dir.normalized * distThisFrame, Space.World);
+                Quaternion targetRotation = Quaternion.LookRotation(dir);
+                this.transform.rotation = Quaternion.Lerp(this.transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
+            }  
         }
     }
 
@@ -60,14 +63,15 @@ public class EnemyMovement : MonoBehaviour {
     }
 
     void ReachedGoal(int dmg){
-        Destroy(gameObject);
+        aManager.PlayBaseDMG();
 
         rManager.BaseTakeDMG(dmg);
         pathDone = true;
-        
+        Destroy(gameObject);
+
         //if (PlayerDB.Instance.health-- <= 1)
-       // {
-           // Debug.Log("lollipop");
+        // {
+        // Debug.Log("lollipop");
         //}
     }
 }

@@ -13,11 +13,15 @@ public class WaveManager : MonoBehaviour {
     private int currentEnemy;
     private int enemiesSpawning;
 
+    private AudioManager audioManager;
+    private AudioSource asource;
+
     void Start() {
         waveDB          =   GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveDB>();
         spawnManager    =   GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<SpawnManager>();
+        audioManager    =   GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
 
-        StartCoroutine("SpawnTimer");
+        
     }
 
     void Update() {
@@ -26,13 +30,21 @@ public class WaveManager : MonoBehaviour {
             wavePause = true;
         }
     }
+
+    //TO DO: functies hier onder aanpassen/verplaatsen
     public void NextWaveButtonClicked() {
         if (!waveDB.isSpawning) {
-            Debug.Log("NEXT WAVE NOW");
+            waveDB.waveTimer = 0;
         }
     }
 
+    public void StartGameButtonClicked() {
+        StartCoroutine("SpawnTimer");
+    }
+
     void StartNewWave() {
+        audioManager.PlayNewWave();
+
         currentEnemy = 0;
         waveDB.currentWave++;
 

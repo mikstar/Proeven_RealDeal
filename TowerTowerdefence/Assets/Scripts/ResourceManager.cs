@@ -10,7 +10,7 @@ public class ResourceManager : MonoBehaviour {
 
     public void BaseTakeDMG(int dmg) {
         PlayerDB.Instance.health -= dmg;
-        healthGUI.fillAmount = PlayerDB.Instance.health / PlayerDB.Instance.startHealth;
+
         
         //TEMP!!! 
         if (PlayerDB.Instance.health <= 0) {
