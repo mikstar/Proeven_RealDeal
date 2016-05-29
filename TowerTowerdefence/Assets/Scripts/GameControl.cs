@@ -3,13 +3,29 @@ using System.Collections;
 
 public class GameControl : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    public GameObject gameoverscreen;
+    public AudioManager aManager;
+    public WaveManager wManager;
+
+    private bool gameFinished ;
+
+    void Start() {
+        gameFinished = false;
+    }
+
+    public void GameOver() {
+        if (!gameFinished)
+        {
+            gameFinished = true;
+            aManager.PlayGameOver();
+            gameoverscreen.SetActive(true);
+
+            wManager.StopWaves();
+        }
+    }
+
+    public void GameWon() {
+
+    }
 }
