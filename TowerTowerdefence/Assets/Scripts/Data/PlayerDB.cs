@@ -7,7 +7,7 @@ public class PlayerDB : MonoBehaviour {
     
     public int gold;
     public float health;
-    public float startHealth;
+    public float maxHealth;
 
     public static PlayerDB Instance {
         get {

@@ -22,7 +22,7 @@ public class HUD : MonoBehaviour {
     void FixedUpdate() {
         resourceCount.text  =   PlayerDB.Instance.gold.ToString();
 
-        healtCount.text     =   PlayerDB.Instance.health.ToString() + "/" + PlayerDB.Instance.startHealth.ToString();
+        healtCount.text     =   PlayerDB.Instance.health.ToString() + "/" + PlayerDB.Instance.maxHealth.ToString();
 
         waveCount.text      =   "Wave: " + waveDB.currentWave.ToString();
 
