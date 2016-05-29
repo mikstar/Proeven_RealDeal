@@ -114,6 +114,9 @@ public class TowerUpgrader : MonoBehaviour {
     }
     public void sellTower()
     {
+
+        Rman.AddGold(selectedTower.sellValue);
+
         UpgradeMenu.gameObject.SetActive(false);
         Destroy(selectedTower.gameObject);
 
