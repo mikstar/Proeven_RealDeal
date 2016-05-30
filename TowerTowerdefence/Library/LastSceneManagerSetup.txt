@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/ForestDay.unity
+- path: Assets/Scenes/IceDay.unity
   isLoaded: 1
   isActive: 1
