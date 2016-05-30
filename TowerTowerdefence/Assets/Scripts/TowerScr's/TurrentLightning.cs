@@ -22,7 +22,7 @@ public class TurrentLightning : TowerBase{
             //check if target still exists
             if (targets[i].GetComponent<EnemyBase>().isDead == false)
             {
-                //targets[i].GetComponent<EnemyBase>().DamageEnemy(damage);
+                targets[i].GetComponent<EnemyBase>().DamageEnemy(damage);
             }
             else
             {
