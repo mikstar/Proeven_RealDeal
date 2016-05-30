@@ -12,7 +12,14 @@ public class TempTutScript : MonoBehaviour
     public Button skip;
     public Button startgame;
 
+    public GameObject resource;
+    public GameObject waveInfo;
+    public GameObject waveButt;
+    public GameObject buttons;
+
     public Image fadeBack;
+
+    public HUD hud;
 
     public int currentFrame;
 
@@ -30,13 +37,16 @@ public class TempTutScript : MonoBehaviour
             case 1:
                 SetFrame();
                 skip.gameObject.SetActive(false);
-                
+                resource.gameObject.SetActive(true);
                 break;
             case 2:
                 SetFrame();
+                buttons.gameObject.SetActive(true);
                 break;
             case 3:
                 SetFrame();
+                hud.HUDactive = true;
+                waveInfo.gameObject.SetActive(true);
                 break;
             case 4:
                 SetFrame();
@@ -59,6 +69,11 @@ public class TempTutScript : MonoBehaviour
         this.gameObject.SetActive(false);
         tuts[currentFrame].SetActive(false);
         fadeBack.gameObject.SetActive(false);
+
+        resource.gameObject.SetActive(true);
+        buttons.gameObject.SetActive(true);
+        hud.HUDactive = true;
+        waveInfo.gameObject.SetActive(true);
     }
 
     public void SetFrame() {

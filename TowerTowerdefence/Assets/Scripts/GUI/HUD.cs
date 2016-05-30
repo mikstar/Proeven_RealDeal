@@ -11,12 +11,16 @@ public class HUD : MonoBehaviour {
 
     public Button nextWaveButton;
 
+    public bool HUDactive;
+
     private WaveManager waveManager;
     private WaveDB waveDB;
 
     void Start() {
         waveManager =   GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveManager>();
         waveDB      =   GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveDB>();
+
+        HUDactive = false;
     }
 
     void FixedUpdate() {
@@ -29,19 +33,20 @@ public class HUD : MonoBehaviour {
         if (waveDB.isSpawning == true)
         {
             startTimer.text = "Wave in progress";
-
             nextWaveButton.gameObject.SetActive(false);
         }
 
         else {
             startTimer.text = "Next wave in " + waveDB.waveTimer.ToString() + " seconds";
-            nextWaveButton.gameObject.SetActive(true);
-
+            if (HUDactive == true) {
+                nextWaveButton.gameObject.SetActive(true);
+            }
         } 
     }
 
-    private void NextWaveButtonClicked() {
+    public void NextWaveButtonClicked() {
         waveManager.NextWaveButtonClicked();
+       
     }
 
     //TEMP CODE BELOW
