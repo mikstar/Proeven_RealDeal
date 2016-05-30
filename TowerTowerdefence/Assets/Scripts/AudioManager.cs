@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour {
     public AudioClip towerUpgradedSound;
     public AudioClip towerSoldSound;
 
+
     public AudioClip baseDMG;
 
     private AudioSource aSource;
@@ -49,6 +50,7 @@ public class AudioManager : MonoBehaviour {
         aSource.PlayOneShot(gameLostSound);
 
         AudioSource aS = transform.GetChild(0).GetComponent<AudioSource>();
-        aS.volume = 0.1f;
+        aS.volume = 0.2f;
     }
+
 }
