@@ -8,6 +8,9 @@ public class TurrentSlowArea : TowerBase{
 
     protected override void fireTurrent()
     {
+
+        audioSRS.Play();
+
         for (int i=0;i< targets.Count; i++)
         {
             if (targets[i].GetComponent<EnemyBase>().isDead == false)

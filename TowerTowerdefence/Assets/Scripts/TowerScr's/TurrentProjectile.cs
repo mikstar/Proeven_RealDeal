@@ -17,6 +17,8 @@ public class TurrentProjectile : TowerBase {
     protected override void fireTurrent()
     {
         
+
+
         while(targets[0].GetComponent<EnemyBase>().isDead)
         {
             targets.RemoveAt(0);
@@ -26,7 +28,10 @@ public class TurrentProjectile : TowerBase {
                 return;
             }
         }
-        
+
+
+        audioSRS.Play();
+
         //Check if a bullet is avalible
         int AvalibleBulletIndx = -1;
         for (int i=0;i< bullets.Count; i++)
