@@ -57,8 +57,7 @@ public class TowerPlacer : MonoBehaviour {
                 heldObj.transform.position = hit.point;
                 heldObj.transform.rotation = Quaternion.LookRotation(hit.normal);
                 heldObj.transform.eulerAngles += new Vector3(90,0,0);
-
-                Debug.Log(hit.normal);
+                
                 areaIndicator.position = heldObj.transform.position;
 
                 checkObj.position = heldObj.transform.position;
