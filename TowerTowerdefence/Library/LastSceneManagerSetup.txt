@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/MenuScene.unity
+=======
+- path: Assets/Scenes/ForestDay.unity
+>>>>>>> 5ab344ff36e24ed500df8af92d868ddb6caaeb87
   isLoaded: 1
   isActive: 1
