@@ -42,6 +42,12 @@ public class WaveManager : MonoBehaviour {
         StartCoroutine("SpawnTimer");
     }
 
+    public void StopWaves() {
+        StopCoroutine("SpawnTimer");
+        StopCoroutine("SpawnEnemies");
+
+    }
+
     void StartNewWave() {
         audioManager.PlayNewWave();
 

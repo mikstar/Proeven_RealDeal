@@ -44,4 +44,11 @@ public class AudioManager : MonoBehaviour {
     public void PlayBaseDMG() {
         aSource.PlayOneShot(baseDMG);
     }
+
+    public void PlayGameOver() {
+        aSource.PlayOneShot(gameLostSound);
+
+        AudioSource aS = transform.GetChild(0).GetComponent<AudioSource>();
+        aS.volume = 0.1f;
+    }
 }
