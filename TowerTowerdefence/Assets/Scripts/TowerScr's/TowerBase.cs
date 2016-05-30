@@ -21,10 +21,13 @@ public class TowerBase : MonoBehaviour {
     public List<GameObject> targets = new List<GameObject>();
     protected float timeToFire;
 
+    protected AudioSource audioSRS;
+
 	// Use this for initialization
 	void Start () {
         timeToFire = 60 / firerate;
         rangeColl.radius = range;
+        audioSRS = GetComponent<AudioSource>();
     }
 
     public void turnTowerOn()

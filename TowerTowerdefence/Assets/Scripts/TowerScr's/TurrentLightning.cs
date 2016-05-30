@@ -17,6 +17,7 @@ public class TurrentLightning : TowerBase{
 
     protected override void fireTurrent()
     {
+
         for (int i=0;i<targets.Count; i++)
         {
             //check if target still exists
@@ -30,6 +31,12 @@ public class TurrentLightning : TowerBase{
                 i--;
             }
         }
+        //play audio if there's at least 1 target
+        if(targets.Count > 0)
+        {
+            audioSRS.Play();
+        }
+
         //check how many(if any) new beams are needed
         int beamsNeeded = targets.Count - beams.Count;
         for (int j=0;j<beamsNeeded; j++)
