@@ -6,7 +6,6 @@ public class CamControll : MonoBehaviour {
     private bool inputHeld;
     private Transform camTrans;
     private Vector2 easePoint = Vector2.zero;
-    public float testYmove;
 
 	// Use this for initialization
 	void Start () {
