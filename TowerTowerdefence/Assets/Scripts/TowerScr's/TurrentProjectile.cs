@@ -16,10 +16,10 @@ public class TurrentProjectile : TowerBase {
 
     protected override void fireTurrent()
     {
-        
 
 
-        while(targets[0].GetComponent<EnemyBase>().isDead)
+
+        while (targets[0] == null || targets[0].GetComponent<EnemyBase>().isDead)
         {
             targets.RemoveAt(0);
             if (targets.Count == 0)
