@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/ForestNight.unity
+=======
+- path: Assets/Scenes/MenuScene.unity
+>>>>>>> origin/master
   isLoaded: 1
   isActive: 1
