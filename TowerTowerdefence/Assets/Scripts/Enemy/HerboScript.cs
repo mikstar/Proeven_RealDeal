@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class HerboScript : EnemyBase{
@@ -10,7 +11,7 @@ public class HerboScript : EnemyBase{
     public override void Start(){
         audioSource = GetComponent<AudioSource>();
         deathAudio = deathsound;
-
+        healthBar = transform.FindChild("EnemyCanvas").FindChild("Fill").GetComponent<Image>();
     }
 
     void FixedUpdate(){

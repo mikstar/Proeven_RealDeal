@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class BossScript : EnemyBase{
 
     public AudioClip deathsound;
-
     public int baseDMG;
 
 
@@ -13,7 +13,7 @@ public class BossScript : EnemyBase{
         audioSource = GetComponent<AudioSource>();
         deathAudio = deathsound;
 
-
+        healthBar = transform.FindChild("EnemyCanvas").FindChild("Fill").GetComponent<Image>();
     }
 
     void FixedUpdate(){

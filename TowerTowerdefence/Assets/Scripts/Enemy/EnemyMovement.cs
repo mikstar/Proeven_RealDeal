@@ -3,40 +3,53 @@ using System.Collections;
 
 public class EnemyMovement : MonoBehaviour {
 
-    public float speed;
-    public float turnSpeed;
+    [Header("Speed Stats")]
+    public float speed;                     //Movement speed of the enemy
+    public float turnSpeed;                 //Turn speed of the enemy
 
-    public ResourceManager rManager;
-    public AudioManager aManager;
+    [HideInInspector]
+    public ResourceManager rManager;        //Resource manager
+    [HideInInspector]
+    public AudioManager aManager;           //Audio manager
+    [HideInInspector]
+    public SpawnManager sManager;           //Spawn manager
+    [HideInInspector]
+    public GameObject path;                 //The path the enemy will walk on
 
-    public GameObject path;
+    private Transform targetWaypoint;       //The next waypoint in the path
+    private int waypointIndex;              
+    private bool pathDone = false;          
+    private int dmgz;                       //Damage enemy will do to player
 
-    private Transform targetWaypoint;
-    private int waypointIndex;
-    private bool pathDone = false;
+    protected bool ableToMove = true;
 
-    public bool ableToMove = true;
 
-    private int dmgz;
-
-    public virtual void Start() {
+    public virtual void Start()
+    {
         
     }
 
-    public void Move(int endDMG){
+    protected void Move(int endDMG)
+    {
         dmgz = endDMG;
 
-        if (ableToMove) {
+        if (ableToMove)
+        {
+            //If the enemy has no waypoint, find the waypoint
             if (targetWaypoint == null)
             {
                 GetNextWaypoint(dmgz);
+
+                //If no waypoint is found and the path is not done yet
                 if (targetWaypoint == null && !pathDone)
                 {
                     ReachedGoal(dmgz);
                     return;
                 }
             }
-            else {
+            else
+            {
+                //The direction for the enemy
                 Vector3 dir = targetWaypoint.position - gameObject.transform.position;
                 float distThisFrame = speed * Time.deltaTime;
 
@@ -52,26 +65,32 @@ public class EnemyMovement : MonoBehaviour {
         }
     }
 
-    void GetNextWaypoint(int dmg) {
-        if(waypointIndex < path.transform.childCount){ 
+    private void GetNextWaypoint(int dmg)
+    {
+        //Check if there is a next waypoint
+        if(waypointIndex < path.transform.childCount)
+        { 
             targetWaypoint = path.transform.GetChild(waypointIndex);
             waypointIndex++;
-        }else{
+        }
+        //Else the path is done and the enemy has reached its destination
+        else
+        {
             targetWaypoint = null;
             ReachedGoal(dmg);
         }
     }
 
-    void ReachedGoal(int dmg){
+    private void ReachedGoal(int dmg)
+    {
+        //Play audio for taking base damage
         aManager.PlayBaseDMG();
 
+        //Do damage to base/player
         rManager.BaseTakeDMG(dmg);
+
+        //Destroy enemy 
         pathDone = true;
         Destroy(gameObject);
-
-        //if (PlayerDB.Instance.health-- <= 1)
-        // {
-        // Debug.Log("lollipop");
-        //}
     }
 }

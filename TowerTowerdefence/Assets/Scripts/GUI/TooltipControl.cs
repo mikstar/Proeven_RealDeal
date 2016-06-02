@@ -11,7 +11,6 @@ public class TooltipControl : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //Debug.Log("IsOn");
         tooltipFrame.position = Input.mousePosition;
     }
 

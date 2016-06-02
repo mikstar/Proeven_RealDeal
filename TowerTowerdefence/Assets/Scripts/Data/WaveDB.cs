@@ -15,8 +15,8 @@ public class WaveDB : MonoBehaviour {
     [System.Serializable]
     public class EnemyData{
         public enum EnemyTypes{
-            Shroom1,
-            Shroom2,
+            ShroomNormal,
+            ShroomTank,
             Herbo, 
             Boss, 
             Boss2
@@ -35,6 +35,8 @@ public class WaveDB : MonoBehaviour {
         public EnemyTypes   name;
         public EnemyPath    path;
         public EnemySize    size;
+
+        [Header("Stats")]
         public float        speed;
         public float        health; 
 

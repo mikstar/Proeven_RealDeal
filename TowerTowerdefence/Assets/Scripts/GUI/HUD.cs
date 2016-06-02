@@ -16,14 +16,16 @@ public class HUD : MonoBehaviour {
     private WaveManager waveManager;
     private WaveDB waveDB;
 
-    void Start() {
+    void Start()
+    {
         waveManager =   GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveManager>();
         waveDB      =   GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveDB>();
 
-        HUDactive = false;
+        HUDactive   =   false;
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         resourceCount.text  =   PlayerDB.Instance.gold.ToString();
 
         healtCount.text     =   PlayerDB.Instance.health.ToString() + "/" + PlayerDB.Instance.maxHealth.ToString();
@@ -36,17 +38,19 @@ public class HUD : MonoBehaviour {
             nextWaveButton.gameObject.SetActive(false);
         }
 
-        else {
+        else
+        {
             startTimer.text = "Next wave in " + waveDB.waveTimer.ToString() + " seconds";
-            if (HUDactive == true) {
+            if (HUDactive == true)
+            {
                 nextWaveButton.gameObject.SetActive(true);
             }
         } 
     }
 
-    public void NextWaveButtonClicked() {
-        waveManager.NextWaveButtonClicked();
-       
+    public void NextWaveButtonClicked()
+    {
+        waveManager.NextWave();   
     }
 
     //TEMP CODE BELOW

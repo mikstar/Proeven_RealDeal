@@ -4,100 +4,92 @@ using System.Collections;
 
 public class EnemyBase : EnemyMovement {
 
-    public float maxHealth;                 //Maximum health the enemy can have
-    public float health;                    //Health the enemy has
+    [Header("Health Stats")]
+    public float maxHealth;                 //Enemy maximum health
+    public float health;                    //Health the enemy has   
 
-    public float slowedTime;    
+    [Header("Rewards")]
+    [SerializeField]
+    protected int goldReward;                  //Resource reward for killing the enemy
 
-    public int goldReward;                  //Resource reward for player
+    [HideInInspector]
+    public bool isDead = false;             //bool to check if the enemy is dead
+
+    [Space(20)]
+    [SerializeField]
+    private Shader alphaShader;              //Shader for fading
 
     private Renderer childRenderer;         //Renderer of child gameobject
-
     private Color colorStart;               //Fade color start
     private Color colorEnd;                 //Fade color end
 
-    public Shader alphaShader;              //Shader for fading
+    [SerializeField]
+    protected Image healthBar;              //Enemy health point graphic
 
-    public bool isSlowed;                   //bool to check if the enemy is slowed
-    public bool isDead = false;             //bool to check if the enemy is dead
-    public SpawnManager sManager;
+    protected Animator anim;                //Enemy animator controller
+    protected AudioSource audioSource;      //Audiosource on enemy
+    protected AudioClip deathAudio;         //Audioclip played on death   
 
-    protected Animator anim;                  //Enemy animator controller
-
-    protected AudioSource audioSource;         //Audiosource on enemy
-    protected AudioClip deathAudio;            //Audioclip played on death   
-
-    public Image healthBar;
-
-    public override void Start() {
+    public override void Start()
+    {
         base.Start();
-
-        
     }
 
-    //void LateUpdate() {
-        //if (isDead) {
-          //  if (anim.GetCurrentAnimatorStateInfo(0).IsName("Death")) {
-            //   FadeOut();
-           // }
-        //}
-    //}
-
-    public void FadeOut() {
+    public void FadeOut()
+    {
+        //Get the start and end colors for the fade
         colorStart = GetComponentInChildren<Renderer>().material.color;
         colorEnd = new Color(colorStart.r, colorStart.g, colorStart.b, 0.0f);
 
+        //Get renderer component, set shader and lerp color
         childRenderer = GetComponentInChildren<Renderer>();
         childRenderer.material.shader = alphaShader;
         childRenderer.material.color = Color.Lerp(colorStart, colorEnd, Time.deltaTime);
 
-        if (childRenderer.material.color.a <= 0.05f) {
+        //If the enemy is faded beyond visability, destroy it.
+        if (childRenderer.material.color.a <= 0.05f)
+        {
             DestroyEnemy();
         }
     }
 
-    public void DamageEnemy(float dmg) {
+    public void DamageEnemy(float dmg)
+    {
         //Inflict damage on enemy
         health -= dmg;
 
-        //TO DO: clean up, move to mush/herbo
-        healthBar = transform.FindChild("EnemyCanvas").FindChild("Fill").GetComponent<Image>();
-
+        //Set HP bar to correct fill amount
         healthBar.fillAmount = health / maxHealth;
-        if (health <= 0) {
+        if (health <= 0)
+        {
             KillEnemy();
         }
     }
 
-    private void KillEnemy() {
+    private void KillEnemy()
+    {
         //Kills the enemy
-        if (!isDead) {
+        if (!isDead)
+        {
+            //Disables movement
             ableToMove = false;
+
+            //Play death animation
             anim = GetComponentInChildren<Animator>();
             anim.SetBool("Dead", true);
+
+            //Play death sound
             audioSource.PlayOneShot(deathAudio);
+
+            //Reward gold to player
             rManager.AddGold(goldReward);
             isDead = true;
         }
     }
   
-    private void DestroyEnemy() {
+    private void DestroyEnemy()
+    {
         //Destroy the enemy 
         Destroy(gameObject);
     }
-    
-    
-    // kan weg als mike het niet gebruikt?
-    public void Slowed() {
-        isSlowed = true;
-        StartCoroutine("SlowedDelay");
-    }
-
-
-    
-    IEnumerator SlowedDelay() {
-        speed /= 2;
-        yield return new WaitForSeconds(slowedTime);
-        speed *= 2;
-    } 
 }

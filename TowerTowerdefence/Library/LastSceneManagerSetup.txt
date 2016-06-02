@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/ForestNight.unity
-=======
-- path: Assets/Scenes/MenuScene.unity
->>>>>>> origin/master
+- path: Assets/Scenes/Levels/IceDay.unity
   isLoaded: 1
   isActive: 1
