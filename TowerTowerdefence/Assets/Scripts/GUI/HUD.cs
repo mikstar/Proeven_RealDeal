@@ -4,16 +4,16 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour {
 
-    public Text resourceCount;
-    public Text waveCount;
-    public Text startTimer;
-    public Text healtCount;
+    public Text resourceCount;          //Text to display gold
+    public Text waveCount;              //Text to display current wave
+    public Text startTimer;             //Text to display time in seconds till next wave
+    public Text healtCount;             //Text to display healthpoints
 
-    public Button nextWaveButton;
+    public Button nextWaveButton;       //Button to skip to next wave
 
-    public bool HUDactive;
+    public bool HUDactive;          
 
-    private WaveManager waveManager;
+    private WaveManager waveManager;    
     private WaveDB waveDB;
 
     void Start()
@@ -26,6 +26,7 @@ public class HUD : MonoBehaviour {
 
     void FixedUpdate()
     {
+        //Set the text elements
         resourceCount.text  =   PlayerDB.Instance.gold.ToString();
 
         healtCount.text     =   PlayerDB.Instance.health.ToString() + "/" + PlayerDB.Instance.maxHealth.ToString();
@@ -50,10 +51,11 @@ public class HUD : MonoBehaviour {
 
     public void NextWaveButtonClicked()
     {
+        //Function for next wave
         waveManager.NextWave();   
     }
 
-    //TEMP CODE BELOW
+   
     public void RestartLevel() {
         Application.LoadLevel("ForestDay");
     }

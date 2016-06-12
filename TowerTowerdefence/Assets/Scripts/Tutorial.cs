@@ -4,7 +4,6 @@ using System.Collections;
 
 public class Tutorial : MonoBehaviour
 {
-
     public GameObject[] tuts;       // Array of tutorial frames
     public Transform[] nextPos;     // Array of transforms for Next Button
 
