@@ -4,17 +4,22 @@ using System.Collections;
 public class GameControl : MonoBehaviour {
 
 
-    public GameObject gameoverscreen;
-    public AudioManager aManager;
-    public WaveManager wManager;
+    public GameObject gameoverscreen;       //UI screen shown when the game is over.
+    public AudioManager aManager;           //Audio manager
+    public WaveManager wManager;            //Wave manager
 
-    private bool gameFinished ;
+    private bool gameFinished;
 
-    void Start() {
+    void Start()
+    {
         gameFinished = false;
     }
 
-    public void GameOver() {
+    /// <summary>
+    /// Stops all waves and spawns game over screen.
+    /// </summary>
+    public void GameOver()
+    {
         if (!gameFinished)
         {
             gameFinished = true;
@@ -25,7 +30,8 @@ public class GameControl : MonoBehaviour {
         }
     }
 
-    public void GameWon() {
+    public void GameWon()
+    {
 
     }
 }

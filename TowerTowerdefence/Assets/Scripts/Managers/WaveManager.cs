@@ -4,21 +4,22 @@ using System.Collections;
 public class WaveManager : MonoBehaviour {
 
     [Header("Wave timers")]
-    public int startDelay;
-    public int waveDelay;
+    public int startDelay;                      //delay before the first wave starts
+    public int waveDelay;                       //delat before the next wave starts
 
-    private WaveDB waveDB;
-    private SpawnManager spawnManager;
-    private bool wavePause;
+    private WaveDB waveDB;                      //wave data
+    private SpawnManager spawnManager;          //Spawn manager
+    private bool wavePause;             
 
+    private AudioManager  audioManager;         //Audio Manager
+    private AudioSource  asource;               //Audio source
+    
     private int currentEnemy;
     private int enemiesSpawning;
 
-    private AudioManager  audioManager;
-    private AudioSource  asource;
-
     void Start()
     {
+        //Getting all managers
         waveDB          =   GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveDB>();
         spawnManager    =   GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<SpawnManager>();
         audioManager    =   GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
@@ -34,25 +35,39 @@ public class WaveManager : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Sets the wavetimer to 0 in order to make the next wave spawn immediately
+    /// </summary>
     public void NextWave()
     {
+        //If there is no wave currently in spawn
         if (!waveDB.isSpawning)
         {
+            //Set the timer to zero to make the next wave spawn
             waveDB.waveTimer = 0;
         }
     }
 
+    /// <summary>
+    /// Starts the game by starting the spawning coroutine
+    /// </summary>
     public void StartGameButtonClicked()
     {
         StartCoroutine("SpawnTimer");
     }
 
+    /// <summary>
+    /// Stops the game by stopping the spawning coroutine
+    /// </summary>
     public void StopWaves()
     {
         StopCoroutine("SpawnTimer");
         StopCoroutine("SpawnEnemies");
     }
 
+    /// <summary>
+    /// Starts a new wave
+    /// </summary>
     void StartNewWave()
     {
         //Play audio for new incoming wave
@@ -68,6 +83,7 @@ public class WaveManager : MonoBehaviour {
         waveDB.isSpawning   =   true;
         StartCoroutine("SpawnEnemies");
     }
+
 
     IEnumerator SpawnTimer()
     {

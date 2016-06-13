@@ -23,12 +23,14 @@ public class EnemyMovement : MonoBehaviour {
 
     protected bool ableToMove = true;
 
-
     public virtual void Start()
     {
         
     }
 
+    /// <summary>
+    /// Moves the enemy along the path it has been given.
+    /// </summary>
     protected void Move(int endDMG)
     {
         dmgz = endDMG;
@@ -65,6 +67,9 @@ public class EnemyMovement : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Get the next waypoint in the enemy path.
+    /// </summary>
     private void GetNextWaypoint(int dmg)
     {
         //Check if there is a next waypoint
@@ -81,6 +86,9 @@ public class EnemyMovement : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Deals damage to player base and destroys enemy when it has reached the last waypoint.
+    /// </summary>
     private void ReachedGoal(int dmg)
     {
         //Play audio for taking base damage

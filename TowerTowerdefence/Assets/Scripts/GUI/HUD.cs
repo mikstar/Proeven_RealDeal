@@ -11,10 +11,10 @@ public class HUD : MonoBehaviour {
 
     public Button nextWaveButton;       //Button to skip to next wave
 
-    public bool HUDactive;          
+    public bool HUDactive;              
 
-    private WaveManager waveManager;    
-    private WaveDB waveDB;
+    private WaveManager waveManager;    //Wave Manager
+    private WaveDB waveDB;              //Wave data
 
     void Start()
     {

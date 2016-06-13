@@ -1,0 +1,114 @@
+\hypertarget{class_enemy_base}{}\section{Enemy\+Base Class Reference}
+\label{class_enemy_base}\index{Enemy\+Base@{Enemy\+Base}}
+
+
+Inherits \hyperlink{class_enemy_movement}{Enemy\+Movement}.
+
+
+
+Inherited by \hyperlink{class_boss_script}{Boss\+Script}, \hyperlink{class_enemy_mushroom}{Enemy\+Mushroom}, and \hyperlink{class_herbo_script}{Herbo\+Script}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \hyperlink{class_enemy_base_a885f490a36e40840c886f9298ed3f2b7}{Start} ()
+\item 
+void \hyperlink{class_enemy_base_a169427b3ce3e885adbb114dc37b327ed}{Fade\+Out} ()
+\begin{DoxyCompactList}\small\item\em Fades out the enemy corpse \end{DoxyCompactList}\item 
+void \hyperlink{class_enemy_base_a8225b5636fa25a9ca02c09c26075b0d1}{Damage\+Enemy} (float dmg)
+\begin{DoxyCompactList}\small\item\em Inflicts damage to enemy \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{class_enemy_base_a3c546ced55e1151b9fff4fbb231829fc}{max\+Health}
+\item 
+float \hyperlink{class_enemy_base_ab374b875d914f66d7b6c57ee1952baea}{health}
+\item 
+bool \hyperlink{class_enemy_base_ab4565b2e106ecb78b0c67b328af09b7d}{is\+Dead} = false
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_enemy_base_aa4de964f8cab32f3da8723416e0a81d3}{gold\+Reward}
+\item 
+Image \hyperlink{class_enemy_base_a0a77e8a33dbbed05ba530f435807dac5}{health\+Bar}
+\item 
+Animator \hyperlink{class_enemy_base_ad766c080a32836a8ddb1ec98ef9ded6f}{anim}
+\item 
+Audio\+Source \hyperlink{class_enemy_base_acd3335408fd17ac8f1e1f7881f0ab21f}{audio\+Source}
+\item 
+Audio\+Clip \hyperlink{class_enemy_base_a94b27aad23205d75dfe7de901f35de50}{death\+Audio}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\index{Enemy\+Base@{Enemy\+Base}!Damage\+Enemy@{Damage\+Enemy}}
+\index{Damage\+Enemy@{Damage\+Enemy}!Enemy\+Base@{Enemy\+Base}}
+\subsubsection[{\texorpdfstring{Damage\+Enemy(float dmg)}{DamageEnemy(float dmg)}}]{\setlength{\rightskip}{0pt plus 5cm}void Enemy\+Base.\+Damage\+Enemy (
+\begin{DoxyParamCaption}
+\item[{float}]{dmg}
+\end{DoxyParamCaption}
+)}\hypertarget{class_enemy_base_a8225b5636fa25a9ca02c09c26075b0d1}{}\label{class_enemy_base_a8225b5636fa25a9ca02c09c26075b0d1}
+
+
+Inflicts damage to enemy 
+
+\index{Enemy\+Base@{Enemy\+Base}!Fade\+Out@{Fade\+Out}}
+\index{Fade\+Out@{Fade\+Out}!Enemy\+Base@{Enemy\+Base}}
+\subsubsection[{\texorpdfstring{Fade\+Out()}{FadeOut()}}]{\setlength{\rightskip}{0pt plus 5cm}void Enemy\+Base.\+Fade\+Out (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_enemy_base_a169427b3ce3e885adbb114dc37b327ed}{}\label{class_enemy_base_a169427b3ce3e885adbb114dc37b327ed}
+
+
+Fades out the enemy corpse 
+
+\index{Enemy\+Base@{Enemy\+Base}!Start@{Start}}
+\index{Start@{Start}!Enemy\+Base@{Enemy\+Base}}
+\subsubsection[{\texorpdfstring{Start()}{Start()}}]{\setlength{\rightskip}{0pt plus 5cm}override void Enemy\+Base.\+Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_enemy_base_a885f490a36e40840c886f9298ed3f2b7}{}\label{class_enemy_base_a885f490a36e40840c886f9298ed3f2b7}
+
+
+Reimplemented from \hyperlink{class_enemy_movement_a69cfde4faddeed6aa261b7ceeb8173f7}{Enemy\+Movement}.
+
+
+
+Reimplemented in \hyperlink{class_enemy_mushroom_af247e651c8ba100db39ef98dda4ef8bd}{Enemy\+Mushroom}, and \hyperlink{class_herbo_script_aa2c4a84b1fd6649e43c7622971cdb03f}{Herbo\+Script}.
+
+
+
+\subsection{Member Data Documentation}
+\index{Enemy\+Base@{Enemy\+Base}!anim@{anim}}
+\index{anim@{anim}!Enemy\+Base@{Enemy\+Base}}
+\subsubsection[{\texorpdfstring{anim}{anim}}]{\setlength{\rightskip}{0pt plus 5cm}Animator Enemy\+Base.\+anim\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_enemy_base_ad766c080a32836a8ddb1ec98ef9ded6f}{}\label{class_enemy_base_ad766c080a32836a8ddb1ec98ef9ded6f}
+\index{Enemy\+Base@{Enemy\+Base}!audio\+Source@{audio\+Source}}
+\index{audio\+Source@{audio\+Source}!Enemy\+Base@{Enemy\+Base}}
+\subsubsection[{\texorpdfstring{audio\+Source}{audioSource}}]{\setlength{\rightskip}{0pt plus 5cm}Audio\+Source Enemy\+Base.\+audio\+Source\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_enemy_base_acd3335408fd17ac8f1e1f7881f0ab21f}{}\label{class_enemy_base_acd3335408fd17ac8f1e1f7881f0ab21f}
+\index{Enemy\+Base@{Enemy\+Base}!death\+Audio@{death\+Audio}}
+\index{death\+Audio@{death\+Audio}!Enemy\+Base@{Enemy\+Base}}
+\subsubsection[{\texorpdfstring{death\+Audio}{deathAudio}}]{\setlength{\rightskip}{0pt plus 5cm}Audio\+Clip Enemy\+Base.\+death\+Audio\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_enemy_base_a94b27aad23205d75dfe7de901f35de50}{}\label{class_enemy_base_a94b27aad23205d75dfe7de901f35de50}
+\index{Enemy\+Base@{Enemy\+Base}!gold\+Reward@{gold\+Reward}}
+\index{gold\+Reward@{gold\+Reward}!Enemy\+Base@{Enemy\+Base}}
+\subsubsection[{\texorpdfstring{gold\+Reward}{goldReward}}]{\setlength{\rightskip}{0pt plus 5cm}int Enemy\+Base.\+gold\+Reward\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_enemy_base_aa4de964f8cab32f3da8723416e0a81d3}{}\label{class_enemy_base_aa4de964f8cab32f3da8723416e0a81d3}
+\index{Enemy\+Base@{Enemy\+Base}!health@{health}}
+\index{health@{health}!Enemy\+Base@{Enemy\+Base}}
+\subsubsection[{\texorpdfstring{health}{health}}]{\setlength{\rightskip}{0pt plus 5cm}float Enemy\+Base.\+health}\hypertarget{class_enemy_base_ab374b875d914f66d7b6c57ee1952baea}{}\label{class_enemy_base_ab374b875d914f66d7b6c57ee1952baea}
+\index{Enemy\+Base@{Enemy\+Base}!health\+Bar@{health\+Bar}}
+\index{health\+Bar@{health\+Bar}!Enemy\+Base@{Enemy\+Base}}
+\subsubsection[{\texorpdfstring{health\+Bar}{healthBar}}]{\setlength{\rightskip}{0pt plus 5cm}Image Enemy\+Base.\+health\+Bar\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_enemy_base_a0a77e8a33dbbed05ba530f435807dac5}{}\label{class_enemy_base_a0a77e8a33dbbed05ba530f435807dac5}
+\index{Enemy\+Base@{Enemy\+Base}!is\+Dead@{is\+Dead}}
+\index{is\+Dead@{is\+Dead}!Enemy\+Base@{Enemy\+Base}}
+\subsubsection[{\texorpdfstring{is\+Dead}{isDead}}]{\setlength{\rightskip}{0pt plus 5cm}bool Enemy\+Base.\+is\+Dead = false}\hypertarget{class_enemy_base_ab4565b2e106ecb78b0c67b328af09b7d}{}\label{class_enemy_base_ab4565b2e106ecb78b0c67b328af09b7d}
+\index{Enemy\+Base@{Enemy\+Base}!max\+Health@{max\+Health}}
+\index{max\+Health@{max\+Health}!Enemy\+Base@{Enemy\+Base}}
+\subsubsection[{\texorpdfstring{max\+Health}{maxHealth}}]{\setlength{\rightskip}{0pt plus 5cm}float Enemy\+Base.\+max\+Health}\hypertarget{class_enemy_base_a3c546ced55e1151b9fff4fbb231829fc}{}\label{class_enemy_base_a3c546ced55e1151b9fff4fbb231829fc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Coen/\+Documents/\+Git\+Hub/\+Proeven\+\_\+\+Real\+Deal/\+Tower\+Towerdefence/\+Assets/\+Scripts/\+Enemy/\hyperlink{_enemy_base_8cs}{Enemy\+Base.\+cs}\end{DoxyCompactItemize}

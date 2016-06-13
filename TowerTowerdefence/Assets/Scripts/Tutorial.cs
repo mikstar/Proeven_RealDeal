@@ -19,7 +19,6 @@ public class Tutorial : MonoBehaviour
     public Image fadeBack;          // Fade image
 
     public HUD hud;                 // HUD script
-
    
     public int currentFrame;  
     
@@ -29,6 +28,9 @@ public class Tutorial : MonoBehaviour
         startgame.gameObject.SetActive(false);
     }
 
+    /// <summary>
+    /// Set tutorial UI to next frame
+    /// </summary>
     public void Next()
     {
         currentFrame++;
@@ -66,7 +68,11 @@ public class Tutorial : MonoBehaviour
         }
     }
 
-    public void Skip() {
+    /// <summary>
+    /// Skip entire tutorial - Deactivate all tutorial UI and Activate all game UI
+    /// </summary>
+    public void Skip()
+    {
         this.gameObject.SetActive(false);
         tuts[currentFrame].SetActive(false);
         fadeBack.gameObject.SetActive(false);
@@ -77,7 +83,11 @@ public class Tutorial : MonoBehaviour
         waveInfo.gameObject.SetActive(true);
     }
 
-    public void SetFrame() {
+    /// <summary>
+    /// Set UI for current tutorial frame
+    /// </summary>
+    public void SetFrame()
+    {
         for (int i = 0; i < tuts.Length; i++)
         {
             tuts[i].SetActive(false);

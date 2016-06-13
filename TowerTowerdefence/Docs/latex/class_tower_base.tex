@@ -1,0 +1,123 @@
+\hypertarget{class_tower_base}{}\section{Tower\+Base Class Reference}
+\label{class_tower_base}\index{Tower\+Base@{Tower\+Base}}
+
+
+Inherits Mono\+Behaviour.
+
+
+
+Inherited by \hyperlink{class_turrent_lightning}{Turrent\+Lightning}, \hyperlink{class_turrent_projectile}{Turrent\+Projectile}, and \hyperlink{class_turrent_slow_area}{Turrent\+Slow\+Area}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_tower_base_a4f863c377c8114a913e90c9ccaee5e32}{turn\+Tower\+On} ()
+\begin{DoxyCompactList}\small\item\em Enable tower when placed(mostly redundant) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_tower_base_a3fa651023fb588b0af4289d2f26f365a}{tower\+Type}
+\item 
+int \hyperlink{class_tower_base_acf978511d4a2929681acb1cae2201165}{tower\+Lvl}
+\item 
+float \hyperlink{class_tower_base_a55b31ff450647d6d44603cd32b1bc5a1}{damage}
+\item 
+float \hyperlink{class_tower_base_a7b3c6de17168a02da71acd4124451b7e}{firerate}
+\item 
+float \hyperlink{class_tower_base_a9f335f125b84beaafb405210d8b24066}{range}
+\item 
+int \hyperlink{class_tower_base_a23fbeef8aae7efc0a9b32f73fc1496d6}{sell\+Value}
+\item 
+int \hyperlink{class_tower_base_a267ec042fc28a481673c2d2b293b31d5}{upgrade\+Cost}
+\item 
+Sphere\+Collider \hyperlink{class_tower_base_a67924eeea2cd41476516edf36ebea332}{range\+Coll}
+\item 
+Sphere\+Collider \hyperlink{class_tower_base_a69dbc881925ec5df0452143b2bf76175}{base\+Coll}
+\item 
+List$<$ Game\+Object $>$ \hyperlink{class_tower_base_a2ce10cd9123a0bd4025d4f23e1d1c6c1}{targets} = new List$<$Game\+Object$>$()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_tower_base_a15cc4c8b977e8c43269c64a8013d6c0a}{fire\+Turrent} ()
+\begin{DoxyCompactList}\small\item\em Fire the turrent(\+To be defined in child classed) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{class_tower_base_ae2afdd470131571a570c5610c2ff416b}{time\+To\+Fire}
+\item 
+Audio\+Source \hyperlink{class_tower_base_a2f89491fe868034265de556554560ec4}{audio\+S\+RS}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{Tower\+Base@{Tower\+Base}!fire\+Turrent@{fire\+Turrent}}
+\index{fire\+Turrent@{fire\+Turrent}!Tower\+Base@{Tower\+Base}}
+\subsubsection[{\texorpdfstring{fire\+Turrent()}{fireTurrent()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Tower\+Base.\+fire\+Turrent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_tower_base_a15cc4c8b977e8c43269c64a8013d6c0a}{}\label{class_tower_base_a15cc4c8b977e8c43269c64a8013d6c0a}
+
+
+Fire the turrent(\+To be defined in child classed) 
+
+
+
+Reimplemented in \hyperlink{class_turrent_lightning_a48d99e604be63c28bc02a13170e09fe8}{Turrent\+Lightning}, \hyperlink{class_turrent_projectile_ac9d1799cd5122c47b7a5dcd8150c9634}{Turrent\+Projectile}, and \hyperlink{class_turrent_slow_area_af64f88ed22672c3c6f5924e97231cbae}{Turrent\+Slow\+Area}.
+
+\index{Tower\+Base@{Tower\+Base}!turn\+Tower\+On@{turn\+Tower\+On}}
+\index{turn\+Tower\+On@{turn\+Tower\+On}!Tower\+Base@{Tower\+Base}}
+\subsubsection[{\texorpdfstring{turn\+Tower\+On()}{turnTowerOn()}}]{\setlength{\rightskip}{0pt plus 5cm}void Tower\+Base.\+turn\+Tower\+On (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tower_base_a4f863c377c8114a913e90c9ccaee5e32}{}\label{class_tower_base_a4f863c377c8114a913e90c9ccaee5e32}
+
+
+Enable tower when placed(mostly redundant) 
+
+
+
+\subsection{Member Data Documentation}
+\index{Tower\+Base@{Tower\+Base}!audio\+S\+RS@{audio\+S\+RS}}
+\index{audio\+S\+RS@{audio\+S\+RS}!Tower\+Base@{Tower\+Base}}
+\subsubsection[{\texorpdfstring{audio\+S\+RS}{audioSRS}}]{\setlength{\rightskip}{0pt plus 5cm}Audio\+Source Tower\+Base.\+audio\+S\+RS\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_tower_base_a2f89491fe868034265de556554560ec4}{}\label{class_tower_base_a2f89491fe868034265de556554560ec4}
+\index{Tower\+Base@{Tower\+Base}!base\+Coll@{base\+Coll}}
+\index{base\+Coll@{base\+Coll}!Tower\+Base@{Tower\+Base}}
+\subsubsection[{\texorpdfstring{base\+Coll}{baseColl}}]{\setlength{\rightskip}{0pt plus 5cm}Sphere\+Collider Tower\+Base.\+base\+Coll}\hypertarget{class_tower_base_a69dbc881925ec5df0452143b2bf76175}{}\label{class_tower_base_a69dbc881925ec5df0452143b2bf76175}
+\index{Tower\+Base@{Tower\+Base}!damage@{damage}}
+\index{damage@{damage}!Tower\+Base@{Tower\+Base}}
+\subsubsection[{\texorpdfstring{damage}{damage}}]{\setlength{\rightskip}{0pt plus 5cm}float Tower\+Base.\+damage}\hypertarget{class_tower_base_a55b31ff450647d6d44603cd32b1bc5a1}{}\label{class_tower_base_a55b31ff450647d6d44603cd32b1bc5a1}
+\index{Tower\+Base@{Tower\+Base}!firerate@{firerate}}
+\index{firerate@{firerate}!Tower\+Base@{Tower\+Base}}
+\subsubsection[{\texorpdfstring{firerate}{firerate}}]{\setlength{\rightskip}{0pt plus 5cm}float Tower\+Base.\+firerate}\hypertarget{class_tower_base_a7b3c6de17168a02da71acd4124451b7e}{}\label{class_tower_base_a7b3c6de17168a02da71acd4124451b7e}
+\index{Tower\+Base@{Tower\+Base}!range@{range}}
+\index{range@{range}!Tower\+Base@{Tower\+Base}}
+\subsubsection[{\texorpdfstring{range}{range}}]{\setlength{\rightskip}{0pt plus 5cm}float Tower\+Base.\+range}\hypertarget{class_tower_base_a9f335f125b84beaafb405210d8b24066}{}\label{class_tower_base_a9f335f125b84beaafb405210d8b24066}
+\index{Tower\+Base@{Tower\+Base}!range\+Coll@{range\+Coll}}
+\index{range\+Coll@{range\+Coll}!Tower\+Base@{Tower\+Base}}
+\subsubsection[{\texorpdfstring{range\+Coll}{rangeColl}}]{\setlength{\rightskip}{0pt plus 5cm}Sphere\+Collider Tower\+Base.\+range\+Coll}\hypertarget{class_tower_base_a67924eeea2cd41476516edf36ebea332}{}\label{class_tower_base_a67924eeea2cd41476516edf36ebea332}
+\index{Tower\+Base@{Tower\+Base}!sell\+Value@{sell\+Value}}
+\index{sell\+Value@{sell\+Value}!Tower\+Base@{Tower\+Base}}
+\subsubsection[{\texorpdfstring{sell\+Value}{sellValue}}]{\setlength{\rightskip}{0pt plus 5cm}int Tower\+Base.\+sell\+Value}\hypertarget{class_tower_base_a23fbeef8aae7efc0a9b32f73fc1496d6}{}\label{class_tower_base_a23fbeef8aae7efc0a9b32f73fc1496d6}
+\index{Tower\+Base@{Tower\+Base}!targets@{targets}}
+\index{targets@{targets}!Tower\+Base@{Tower\+Base}}
+\subsubsection[{\texorpdfstring{targets}{targets}}]{\setlength{\rightskip}{0pt plus 5cm}List$<$Game\+Object$>$ Tower\+Base.\+targets = new List$<$Game\+Object$>$()}\hypertarget{class_tower_base_a2ce10cd9123a0bd4025d4f23e1d1c6c1}{}\label{class_tower_base_a2ce10cd9123a0bd4025d4f23e1d1c6c1}
+\index{Tower\+Base@{Tower\+Base}!time\+To\+Fire@{time\+To\+Fire}}
+\index{time\+To\+Fire@{time\+To\+Fire}!Tower\+Base@{Tower\+Base}}
+\subsubsection[{\texorpdfstring{time\+To\+Fire}{timeToFire}}]{\setlength{\rightskip}{0pt plus 5cm}float Tower\+Base.\+time\+To\+Fire\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_tower_base_ae2afdd470131571a570c5610c2ff416b}{}\label{class_tower_base_ae2afdd470131571a570c5610c2ff416b}
+\index{Tower\+Base@{Tower\+Base}!tower\+Lvl@{tower\+Lvl}}
+\index{tower\+Lvl@{tower\+Lvl}!Tower\+Base@{Tower\+Base}}
+\subsubsection[{\texorpdfstring{tower\+Lvl}{towerLvl}}]{\setlength{\rightskip}{0pt plus 5cm}int Tower\+Base.\+tower\+Lvl}\hypertarget{class_tower_base_acf978511d4a2929681acb1cae2201165}{}\label{class_tower_base_acf978511d4a2929681acb1cae2201165}
+\index{Tower\+Base@{Tower\+Base}!tower\+Type@{tower\+Type}}
+\index{tower\+Type@{tower\+Type}!Tower\+Base@{Tower\+Base}}
+\subsubsection[{\texorpdfstring{tower\+Type}{towerType}}]{\setlength{\rightskip}{0pt plus 5cm}string Tower\+Base.\+tower\+Type}\hypertarget{class_tower_base_a3fa651023fb588b0af4289d2f26f365a}{}\label{class_tower_base_a3fa651023fb588b0af4289d2f26f365a}
+\index{Tower\+Base@{Tower\+Base}!upgrade\+Cost@{upgrade\+Cost}}
+\index{upgrade\+Cost@{upgrade\+Cost}!Tower\+Base@{Tower\+Base}}
+\subsubsection[{\texorpdfstring{upgrade\+Cost}{upgradeCost}}]{\setlength{\rightskip}{0pt plus 5cm}int Tower\+Base.\+upgrade\+Cost}\hypertarget{class_tower_base_a267ec042fc28a481673c2d2b293b31d5}{}\label{class_tower_base_a267ec042fc28a481673c2d2b293b31d5}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Coen/\+Documents/\+Git\+Hub/\+Proeven\+\_\+\+Real\+Deal/\+Tower\+Towerdefence/\+Assets/\+Scripts/\+Tower\+Scr\textquotesingle{}s/\hyperlink{_tower_base_8cs}{Tower\+Base.\+cs}\end{DoxyCompactItemize}

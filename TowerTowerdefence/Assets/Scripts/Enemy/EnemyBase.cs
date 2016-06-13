@@ -35,6 +35,9 @@ public class EnemyBase : EnemyMovement {
         base.Start();
     }
 
+    /// <summary>
+    /// Fades out the enemy corpse
+    /// </summary>
     public void FadeOut()
     {
         //Get the start and end colors for the fade
@@ -53,6 +56,9 @@ public class EnemyBase : EnemyMovement {
         }
     }
 
+    /// <summary>
+    /// Inflicts damage to enemy
+    /// </summary>
     public void DamageEnemy(float dmg)
     {
         //Inflict damage on enemy

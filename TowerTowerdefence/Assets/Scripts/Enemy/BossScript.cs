@@ -4,19 +4,22 @@ using System.Collections;
 
 public class BossScript : EnemyBase{
 
-    public AudioClip deathsound;
-    public int baseDMG;
+    public AudioClip deathsound;        //Sound this enemy makes when dying
 
+    public int baseDMG;                 //Damage this enemy does to player base
 
     public override void Start()
     {
+        //Getting audiosource
         audioSource = GetComponent<AudioSource>();
+
         deathAudio = deathsound;
 
         healthBar = transform.FindChild("EnemyCanvas").FindChild("Fill").GetComponent<Image>();
     }
 
-    void FixedUpdate(){
+    void FixedUpdate()
+    {
         Move(baseDMG);
 
         if (isDead)

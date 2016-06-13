@@ -9,9 +9,11 @@ public class SpawnManager : MonoBehaviour {
     [SerializeField] private AudioManager aM;           //Audio manager
 
     private GameObject myPath;                          //Chosen path to walk on
-    private GameObject enemy;                           
+    private GameObject enemy;
 
-    //Create enemy with properties
+    /// <summary>
+    /// Creates an enemy and assigns it's properties.
+    /// </summary>
     public void SpawnEnemy(string name, int path, string size, float speed, float health)
     {
         switch (path)
