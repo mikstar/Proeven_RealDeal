@@ -7,7 +7,7 @@ public class OneshotParticle : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        //when obj is made, imediately start a set countdown for its destruction
         Invoke("killparticle", par.startLifetime + par.duration);
     }
     

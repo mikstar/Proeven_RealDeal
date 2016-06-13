@@ -19,11 +19,17 @@ public class Camfade : MonoBehaviour
             fadeObj.GetComponent<Image>().DOFade(0, 1.5f).OnComplete(disableFade);
         }
     }
+    /// <summary>
+    /// Fade screen to black
+    /// </summary>
     public void fadeOut()
     {
         fadeObj.SetActive(true);
         fadeObj.GetComponent<Image>().DOFade(1, 1.5f).OnComplete(disableFade);
     }
+    /// <summary>
+    /// Fade screen to black, then change to given scene when fade is done
+    /// </summary>
     public void fadeOutNewScene(int sceneNum)
     {
         lvlNum = sceneNum;
@@ -35,6 +41,7 @@ public class Camfade : MonoBehaviour
         SceneManager.LoadScene(lvlNum);
     }
 
+    //disable grafic used for fading, so there'a no idle, active obj's
     private void disableFade()
     {
         fadeObj.SetActive(false);

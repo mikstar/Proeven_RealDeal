@@ -2,7 +2,11 @@
 using System.Collections;
 
 public class TurnAlighn : MonoBehaviour {
-    
+    //....
+    // Small script to be apply's to cogs of towers so they turn with when the tower turns
+    //...
+
+    //obj to turn with
     public Transform alighObj;
     public bool invert;
 
